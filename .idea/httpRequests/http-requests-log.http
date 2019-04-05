@@ -1,0 +1,6 @@
+POST https://localhost:5001/Identity/Account/Logout
+Accept: */*
+Cache-Control: no-cache
+
+###
+

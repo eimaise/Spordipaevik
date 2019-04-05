@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\MartinSaar\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\MartinSaar\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_WebApplication2.32411507.00" t="ExcludeRecursive" />
+    <e p="C:\Users\MartinSaar\RiderProjects\WebApplication2" t="IncludeFlat">
+      <e p="BL" t="IncludeRecursive">
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="BL.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="BL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Core" t="IncludeRecursive">
+        <e p="AppServices" t="Include">
+          <e p="AddExerciseCommand.cs" t="Include" />
+          <e p="AddUnitCommand.cs" t="Include" />
+          <e p="GetAppUserListQuery.cs" t="Include" />
+          <e p="GetClassListQuery.cs" t="Include" />
+          <e p="GetClassQuery.cs" t="Include" />
+          <e p="GetExerciseListQuery.cs" t="Include" />
+          <e p="GetExerciseQuery.cs" t="Include" />
+          <e p="GetInviteQuery.cs" t="Include" />
+          <e p="GetStudentListQuery.cs" t="Include" />
+          <e p="GetStudentQuery.cs" t="Include" />
+          <e p="GetStudentsResultsInExerciseQuery.cs" t="Include" />
+          <e p="GetUnitListQuery.cs" t="Include" />
+          <e p="GetUnitQuery.cs" t="Include" />
+          <e p="InviteUsedCommand.cs" t="Include" />
+          <e p="StudentInviteCommand.cs" t="Include" />
+          <e p="TeacherRegistrationCommand.cs" t="Include" />
+        </e>
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="Core.csproj" t="IncludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="Entities" t="Include">
+            <e p="ApplicationUser.cs" t="Include" />
+            <e p="EexerciseType.cs" t="Include" />
+            <e p="Result.cs" t="Include" />
+            <e p="SchoolClass.cs" t="Include" />
+            <e p="Student.cs" t="Include" />
+          </e>
+          <e p="PESportsTrackingContext.cs" t="Include" />
+          <e p="Repositories" t="Include">
+            <e p="ClassRepository.cs" t="Include" />
+            <e p="ExerciseRepository.cs" t="Include" />
+            <e p="PersonRepository.cs" t="Include" />
+          </e>
+          <e p="Seeder.cs" t="Include" />
+        </e>
+        <e p="ICommand.cs" t="Include" />
+        <e p="IQuery.cs" t="Include" />
+        <e p="Messages.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="UI" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Areas" t="Include">
+          <e p="Identity" t="Include">
+            <e p="IdentityHostingStartup.cs" t="Include" />
+            <e p="Pages" t="Include">
+              <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+              <e p="_ViewImports.cshtml" t="Include" />
+              <e p="_ViewStart.cshtml" t="Include" />
+              <e p="Account" t="Include">
+                <e p="_ViewImports.cshtml" t="Include" />
+                <e p="AccessDenied.cshtml" t="Include" />
+                <e p="AccessDenied.cshtml.cs" t="Include" />
+                <e p="ConfirmEmail.cshtml" t="Include" />
+                <e p="ConfirmEmail.cshtml.cs" t="Include" />
+                <e p="ExternalLogin.cshtml" t="Include" />
+                <e p="ExternalLogin.cshtml.cs" t="Include" />
+                <e p="ForgotPassword.cshtml" t="Include" />
+                <e p="ForgotPassword.cshtml.cs" t="Include" />
+                <e p="ForgotPasswordConfirmation.cshtml" t="Include" />
+                <e p="ForgotPasswordConfirmation.cshtml.cs" t="Include" />
+                <e p="Lockout.cshtml" t="Include" />
+                <e p="Lockout.cshtml.cs" t="Include" />
+                <e p="Login.cshtml" t="Include" />
+                <e p="Login.cshtml.cs" t="Include" />
+                <e p="LoginWith2fa.cshtml" t="Include" />
+                <e p="LoginWith2fa.cshtml.cs" t="Include" />
+                <e p="LoginWithRecoveryCode.cshtml" t="Include" />
+                <e p="LoginWithRecoveryCode.cshtml.cs" t="Include" />
+                <e p="Logout.cshtml" t="Include" />
+                <e p="Logout.cshtml.cs" t="Include" />
+                <e p="Manage" t="Include">
+                  <e p="_Layout.cshtml" t="Include" />
+                  <e p="_ManageNav.cshtml" t="Include" />
+                  <e p="_StatusMessage.cshtml" t="Include" />
+                  <e p="_ViewImports.cshtml" t="Include" />
+                  <e p="ChangePassword.cshtml" t="Include" />
+                  <e p="ChangePassword.cshtml.cs" t="Include" />
+                  <e p="DeletePersonalData.cshtml" t="Include" />
+                  <e p="DeletePersonalData.cshtml.cs" t="Include" />
+                  <e p="Disable2fa.cshtml" t="Include" />
+                  <e p="Disable2fa.cshtml.cs" t="Include" />
+                  <e p="DownloadPersonalData.cshtml" t="Include" />
+                  <e p="DownloadPersonalData.cshtml.cs" t="Include" />
+                  <e p="EnableAuthenticator.cshtml" t="Include" />
+                  <e p="EnableAuthenticator.cshtml.cs" t="Include" />
+                  <e p="ExternalLogins.cshtml" t="Include" />
+                  <e p="ExternalLogins.cshtml.cs" t="Include" />
+                  <e p="GenerateRecoveryCodes.cshtml" t="Include" />
+                  <e p="GenerateRecoveryCodes.cshtml.cs" t="Include" />
+                  <e p="Index.cshtml" t="Include" />
+                  <e p="Index.cshtml.cs" t="Include" />
+                  <e p="ManageNavPages.cs" t="Include" />
+                  <e p="PersonalData.cshtml" t="Include" />
+                  <e p="PersonalData.cshtml.cs" t="Include" />
+                  <e p="ResetAuthenticator.cshtml" t="Include" />
+                  <e p="ResetAuthenticator.cshtml.cs" t="Include" />
+                  <e p="SetPassword.cshtml" t="Include" />
+                  <e p="SetPassword.cshtml.cs" t="Include" />
+                  <e p="TwoFactorAuthentication.cshtml" t="Include" />
+                  <e p="TwoFactorAuthentication.cshtml.cs" t="Include" />
+                </e>
+                <e p="Register.cshtml" t="Include" />
+                <e p="Register.cshtml.cs" t="Include" />
+                <e p="ResetPassword.cshtml" t="Include" />
+                <e p="ResetPassword.cshtml.cs" t="Include" />
+                <e p="ResetPasswordConfirmation.cshtml" t="Include" />
+                <e p="ResetPasswordConfirmation.cshtml.cs" t="Include" />
+              </e>
+              <e p="Error.cshtml" t="Include" />
+              <e p="Error.cshtml.cs" t="Include" />
+            </e>
+            <e p="Services" t="Include" />
+            <e p="Views" t="Include">
+              <e p="_Page_Areas_Identity_Pages_Account_Manage_Disable2fa_cshtml" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="config.json" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="AdminController.cs" t="Include" />
+          <e p="ExerciseController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="RegistrationController.cs" t="Include" />
+          <e p="ResultController.cs" t="Include" />
+          <e p="SchoolClassesController.cs" t="Include" />
+          <e p="StudentController.cs" t="Include" />
+          <e p="TeacherController.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ErrorViewModel.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="UI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="ScaffoldingReadme.txt" t="Include" />
+        <e p="SecureTokenGenerator.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="ResultService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="UI.csproj" t="IncludeRecursive" />
+        <e p="ViewModels" t="Include">
+          <e p="Exercises" t="Include">
+            <e p="AddExerciseVv.cs" t="Include" />
+          </e>
+          <e p="Registrations" t="Include">
+            <e p="RegisterVm.cs" t="Include" />
+          </e>
+          <e p="Results" t="Include">
+            <e p="ResultVm.cs" t="Include" />
+          </e>
+          <e p="Students" t="Include">
+            <e p="StudentExerciseVm.cs" t="Include" />
+            <e p="StudentResultVm.cs" t="Include" />
+            <e p="StudentVm.cs" t="Include" />
+          </e>
+          <e p="Teachers" t="Include">
+            <e p="AddTeacherVm.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Admin" t="Include">
+            <e p="AddTeacher.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Teachers.cshtml" t="Include" />
+          </e>
+          <e p="Chart" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Exercise" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="About.cshtml" t="Include" />
+            <e p="Contact.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Partials" t="Include" />
+          <e p="Registration" t="Include">
+            <e p="RegisterStudent.cshtml" t="Include" />
+          </e>
+          <e p="Result" t="Include">
+            <e p="AddResult.cshtml" t="Include" />
+            <e p="ClassList.cshtml" t="Include" />
+            <e p="ExerciseList.cshtml" t="Include" />
+          </e>
+          <e p="SchoolClasses" t="Include">
+            <e p="ClassResults.cshtml" t="Include" />
+            <e p="ExerciseList.cshtml" t="Include" />
+            <e p="List.cshtml" t="Include" />
+            <e p="ResultInDay.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_classes.cshtml" t="Include" />
+            <e p="_CookieConsentPartial.cshtml" t="Include" />
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_LoginPartial.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="Student" t="Include">
+            <e p="_CreateUpdateStudent.cshtml" t="Include" />
+            <e p="AddStudent.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Student.cshtml" t="Include" />
+            <e p="StudentClass.cshtml" t="Include" />
+            <e p="StudentDateResults.cshtml" t="Include" />
+            <e p="StudentResult.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="Web.config" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="site.css" t="Include" />
+            <e p="site.min.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="images" t="Include">
+            <e p="banner1.svg" t="Include" />
+            <e p="banner2.svg" t="Include" />
+            <e p="banner3.svg" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="site.js" t="Include" />
+            <e p="site.min.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-theme.css" t="Include" />
+                  <e p="bootstrap-theme.css.map" t="Include" />
+                  <e p="bootstrap-theme.min.css" t="Include" />
+                  <e p="bootstrap-theme.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="fonts" t="Include">
+                  <e p="glyphicons-halflings-regular.eot" t="Include" />
+                  <e p="glyphicons-halflings-regular.svg" t="Include" />
+                  <e p="glyphicons-halflings-regular.ttf" t="Include" />
+                  <e p="glyphicons-halflings-regular.woff" t="Include" />
+                  <e p="glyphicons-halflings-regular.woff2" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="npm.js" t="Include" />
+                </e>
+              </e>
+              <e p="LICENSE" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="LICENSE.md" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="WebApplication2.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
