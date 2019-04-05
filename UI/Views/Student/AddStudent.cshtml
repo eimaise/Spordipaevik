@@ -1,0 +1,9 @@
+﻿@model WebApplication2.ViewModels.Students.AddStudentVm
+@{
+    ViewData["Title"] = "Õpilased";
+}
+@* <partial name="~/Views/Partials/_CreateUpdateStudent"/> *@
+@await Html.PartialAsync("_CreateUpdateStudent", Model)
+
+
+

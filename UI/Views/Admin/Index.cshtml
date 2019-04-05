@@ -1,0 +1,97 @@
+@model WebApplication2.Controllers.NotRegisteredStudentsListVm
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@{
+    var tempval = TempData["message"] as string;
+}
+<a class="btn btn-info"asp-action="NotRegisteredStudents">Mitte registreerinud kasutajad</a>
+@if (!string.IsNullOrWhiteSpace(tempval))
+{
+    <div id="messages" class="alert alert-success alert-dismissible" role="alert">
+        <div id="messages_content">@tempval</div>
+    </div>
+}
+<div class="row">
+    <div class="col">
+        <form asp-action="FindStudent" method="get">
+            <label style="margin-top: 10px">Õpilase nimi:</label>
+            <input placeholder="Nimi" class="form-control " style="margin-bottom: 10px"name="name" type="text"/>
+            <button style="margin-bottom: 10px" class="btn btn-primary">Otsi</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+        <table id="example" class="table table-striped table-bordered nowrap" style="width: 100%">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Õpilasapileti nr</th>
+                <th>Kutse saadetud</th>
+                <th>Kas on liige</th>
+                <th>Kutse</th>
+                <th>Link Sent</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var student in Model.NotRegisteredStudents)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Student" asp-action="AddStudent" asp-route-id="@student.Id">@student.Email</a>
+                    </td>
+                    <td>@student.StudentCardNr</td>
+                    @if (@student.InviteSent)
+                    {
+                        <td>
+                            <i class="fa fa-check fa-2x text-center " style="color: green"aria-hidden="true"></i>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <i class="fa fa-times fa-2x text-center"style="color: red" aria-hidden="true"></i>
+                        </td>
+                    }
+                    @if (@student.RegisteredInSystem)
+                    {
+                        <td>
+                            <i class="fa fa-check fa-2x text-center " style="color: green"aria-hidden="true"></i>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <i class="fa fa-times fa-2x text-center"style="color: red" aria-hidden="true"></i>
+                        </td>
+                    }
+
+
+                    @*                     <form id="form" asp-controller="Admin" asp-action="SendRegistrationInvite" method="post"> *@
+                    @*                     <input class="btn btn-primary" type="hidden" asp-route-studenId="@student.Id">Saada kutse/> *@
+                    @*                     <button class="btn btn-info" type="submit">Saada kutse</button> *@
+                    @*                     </form> *@
+                    <td>
+                        <form asp-action="SendRegistrationInvite" method="post">
+                            <input class="btn btn-primary" type="hidden" name="studentId" value="@student.Id"/>
+                            <button style="margin-bottom: 10px" type="submit" class="btn btn-primary">Saada kutse</button>
+                        </form>
+                    </td>
+                    @if (!string.IsNullOrWhiteSpace(@student.ActivationLink))
+                    {
+                        <td>@student.ActivationLink</td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+        <div class="col">
+            <a class="btn btn-success" asp-controller="Student" asp-action="AddStudent">Lisa õpilane</a>
+        </div>
+    </div>
+</div>

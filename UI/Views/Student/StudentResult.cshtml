@@ -1,0 +1,77 @@
+﻿@model WebApplication2.ViewModels.Students.StudentExerciseVm
+@{
+    ViewData["Title"] = "Õpilase harjutused ";
+}
+<h1>@Model.ExerciseName</h1>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<table id="example" class="table table-striped table-bordered nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Kuupäev </th>
+        <th>Parim tulemus</th>
+        <th>Klass</th>
+        <th>Kõik katsed</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var result in Model.StudentResults.OrderByDescending(x => x.Date))
+    {
+        <tr class=" @(Model.BiggestValue.Value != result.Value ? null : "table-success")">
+            <td>@result.Date.ToString("dd.MM.yy")</td>
+            <td>@result.Value</td>
+            <td>@result.ClassName</td>
+            <td>
+                <a class="btn btn-info" href="@Url.Action("StudentDateResults", "Student", new {Date = @result.Date, exerciseId = @Model.ExerciseId, studentId = @Model.StudentId})">Vaata</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<script>
+    $(function() {
+        console.log( "ready!" );
+        $.getJSON("/Student/GetData", {
+                studentId:"@Model.StudentId",
+                exerciseId:"@Model.ExerciseId"
+            },
+            function(data) {
+                var chart =  Highcharts.chart('container',
+                    {
+                        chart: {
+                            type: 'line'
+                        },
+                        title: {
+                            text: data.exerciseName
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            categories: data.dates
+                        },
+                        yAxis: {
+                            title: {
+                                text: data.unit
+                            }
+                        },
+                        plotOptions: {
+                            line: {
+                                dataLabels: {
+                                    enabled: true
+                                },
+                                enableMouseTracking: true
+                            }
+                        }
+                    });
+                for (var i = 0; i < data.tulemused.names.length; i++) {
+                    chart.addSeries({                        
+                        name: data.tulemused.names[i],
+                        data: data.tulemused.values[i]
+                    },false);
+                }
+                chart.redraw(); 
+            });
+
+    });
+</script>

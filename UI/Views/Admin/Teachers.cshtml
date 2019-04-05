@@ -1,0 +1,13 @@
+@model IEnumerable<Core.Data.Entities.ApplicationUser>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<h2>title</h2>
+
+@foreach (var user in Model)
+{
+    <p>@user.Email</p>
+}
+<a asp-action="AddTeacher" class="btn btn-success"> lisa õpetaja </a>

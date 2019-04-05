@@ -1,0 +1,38 @@
+﻿@model WebApplication2.ViewModels.Students.AddStudentVm
+@{
+    ViewData["Title"] = "Õpilased";
+}
+<form  asp-action="AddStudent" asp-controller="Student" method="post">
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    <div class="form-group">
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="Name" class="form-control" placeholder="Nimi"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StudentCardNumber"></label>
+        <input asp-for="StudentCardNumber" class="form-control" placeholder="Õpilasepileti nr"/>
+        <span asp-validation-for="StudentCardNumber"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" placeholder="Email"/>
+        <span asp-validation-for="Email"></span>
+    </div>
+    <label asp-for="Gender"></label>
+    <select class="form-control" asp-for="Gender">
+        <option class="dropdown-item" value="1">Poiss</option>
+        <option value="2">Tüdruk</option>
+    </select>
+    
+    <select class="form-control" asp-for="SchoolClassId">
+        @foreach(var schoolClass in Model.SchoolClasses)
+        {
+            <option class="dropdown-item" value="@schoolClass.Id">@schoolClass.Name</option>
+        }
+    </select>
+    <button style="margin-top: 10px"class="btn btn-success"type="submit">Salvesta</button>
+</form>
+
+
+

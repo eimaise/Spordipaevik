@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings" : {
+    "SportTracerConnectionString" : "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+}

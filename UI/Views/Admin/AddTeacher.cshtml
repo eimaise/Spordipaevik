@@ -1,0 +1,12 @@
+@model WebApplication2.ViewModels.Teachers.AddTeacherVm
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<form asp-action="AddTeacher" method="post">
+    <span asp-validation-for="Email"></span>
+    <input asp-for="Email"/>
+    <button type="submit">Uus õpetaja</button>
+</form>
+<h2>title</h2>

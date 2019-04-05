@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication2.ViewModels.Exercises.ExerciseVm>
+@{
+    ViewData["Title"] = "Harjutused";
+}
+
+    <h1>Vali harjutus :</h1>
+<div class="row-3">
+    
+    <table  class="table table-striped table-bordered nowrap" style="width: 100%">
+        <thead>
+        <tr>
+            <th>Harjutus</th>
+            <th>Kommentaar</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var exercise in Model)
+        {
+            <tr>
+                <td> @exercise.Name</td>
+                <td>@exercise.Comment</td>
+                <td>  <a style="margin-top: 10px"class="btn btn-info" asp-controller="Result" asp-action="ClassList" asp-route-exerciseId="@exercise.Id">
+                    <p>Lisa tulemus</p>
+                </a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+

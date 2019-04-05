@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication2.Data.Entities.Exercise>
+@{
+    ViewData["Title"] = "Õpilased";
+}
+<a style="margin-bottom:10px" class="btn btn-primary"asp-action="Create" method="get">
+    Loo uus harjutus
+</a>
+<table  class="table table-striped table-bordered nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Harjutus</th>
+        <th>Kommentaar</th>
+        <th>Ühik</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var exercise in Model)
+    {
+        <tr>
+        <td> @exercise.Name</td>
+        <td>@exercise.Comment</td>
+            <td> @exercise.Unit.Name</td>
+            <td><a class="btn btn-primary">Muuda</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

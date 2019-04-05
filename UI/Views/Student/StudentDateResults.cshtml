@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Core.Data.Entities.Result>
+@{
+    ViewData["Title"] = "Õpilase harjutused ";
+}
+<h1>@Model.FirstOrDefault()?.Exercise.Name</h1>
+<table id="example" class="table table-striped table-bordered nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Katse </th>
+        <th>Tulemus </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        var i = 1;
+    }
+    @foreach (var result in Model)
+    {
+        <tr >
+            <td>@i</td>
+            <td>@result.Value</td>
+        </tr>
+            i = i+1;
+    }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,41 @@
+﻿@using Core.Data.Entities
+@using WebApplication2.Data.Entities
+@model IEnumerable<SchoolClass>
+@{
+    ViewData["Title"] = "Õpilased";
+}
+
+    <h1>Vali klass</h1>
+
+<table  class="table table-striped table-bordered nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Poisid</th>
+        <th>Tüdrukud</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var schoolClass in Model)
+    {
+        var manId = (int) Gender.Man;
+        var womanId = (int) Gender.Woman;
+        <tr>
+            <td>
+                <form asp-action="ExerciseList"  method="get">
+                    <input type="hidden" name="gender" value="@manId"/>
+                    <input type="hidden" name="classId" value="@schoolClass.Id"/>
+                    <button style="margin-top: 10px" class="btn btn-primary" type="submit">@schoolClass.Name</button>
+                </form>
+            </td>
+            <td>
+
+                <form asp-action="ExerciseList" method="get">
+                    <input type="hidden" name="gender" value="@womanId"/>
+                    <input type="hidden" name="classId" value="@schoolClass.Id"/>
+                    <button style="margin-top: 10px"class="btn btn-primary" type="submit">@schoolClass.Name </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

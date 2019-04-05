@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <RootNamespace>WebApplication2</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="bootstrap" Version="4.3.1" />
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.8" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Identity\Services\" />
+      <Folder Include="Areas\Identity\Views\_Page_Areas_Identity_Pages_Account_Manage_Disable2fa_cshtml" />
+      <Folder Include="Views\Partials" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BL\BL.csproj" />
+    </ItemGroup>
+
+</Project>
