@@ -73,7 +73,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("    <div class=\"row\">\r\n        <div class=\"col\">\r\n            ");
             EndContext();
             BeginContext(154, 339, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08fc6986b3b641a382c28d46c7a38119", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9025b76e7e3b430a9a5c766c04f69599", async() => {
                 BeginContext(192, 294, true);
                 WriteLiteral(@"
                 <label style=""margin-top: 10px"">Õpilase nimi:</label>
@@ -130,7 +130,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("                <tr>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1412, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a69ba6c3f45e4f8d899c5746ded00e29", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49f21ef78a9f42d39df717d79119c444", async() => {
                 BeginContext(1492, 12, false);
 #line 42 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Views\Student\Index.cshtml"
                                                                                                   Write(student.Name);
@@ -191,7 +191,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1700, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e811f1a439134b19929477e32a9548c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0050ee6f40954685a89c44941c52b325", async() => {
                 BeginContext(1806, 5, true);
                 WriteLiteral("Vaata");
                 EndContext();
@@ -237,7 +237,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("            </tbody>\r\n        </table>\r\n        <div class=\"col\">\r\n            ");
             EndContext();
             BeginContext(1961, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb8395c18a0e4cf8bbdedecc27b39aee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82ca5f05ab09453eaafbf23a7b2964af", async() => {
                 BeginContext(2037, 12, true);
                 WriteLiteral("Lisa õpilane");
                 EndContext();

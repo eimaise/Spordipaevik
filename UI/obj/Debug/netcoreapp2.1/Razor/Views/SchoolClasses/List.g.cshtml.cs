@@ -88,7 +88,7 @@ using WebApplication2.Data.Entities;
             WriteLiteral("        <tr>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(542, 346, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ca93bc2f37e43428a93b1e1dfb9e7e9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2ef20d8ffba4e409dfb70cbcb84317d", async() => {
                 BeginContext(588, 56, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"gender\"");
                 EndContext();
@@ -144,7 +144,7 @@ WriteAttributeValue("", 726, schoolClass.Id, 726, 15, false);
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n\r\n                ");
             EndContext();
             BeginContext(945, 347, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f92b2086c3504ef894a3b3c6c75f9092", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c23ea326eb8a4f659fe1208bd68317e4", async() => {
                 BeginContext(990, 56, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"gender\"");
                 EndContext();

@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78a7ffb9-79ec-4e35-89dd-f711fc165a4d" name="Default Changelist" comment="" />
+    <list default="true" id="78a7ffb9-79ec-4e35-89dd-f711fc165a4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BL/bin/Debug/netcoreapp2.1/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BL/bin/Debug/netcoreapp2.1/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BL/bin/Debug/netcoreapp2.1/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BL/bin/Debug/netcoreapp2.1/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BL/obj/Debug/netcoreapp2.1/BL.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BL/obj/Debug/netcoreapp2.1/BL.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/netcoreapp2.1/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/netcoreapp2.1/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/netcoreapp2.1/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/netcoreapp2.1/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/netcoreapp2.1/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/netcoreapp2.1/UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ExternalLogin.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ExternalLogin.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ForgotPassword.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ForgotPassword.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Login.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Login.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/LoginWith2fa.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/LoginWith2fa.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/LoginWithRecoveryCode.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/LoginWithRecoveryCode.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ChangePassword.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ChangePassword.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/DeletePersonalData.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/DeletePersonalData.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/Disable2fa.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/Disable2fa.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ExternalLogins.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ExternalLogins.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/PersonalData.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/PersonalData.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/SetPassword.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/SetPassword.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/_Layout.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/_ManageNav.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Manage/_ManageNav.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Register.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/Register.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ResetPassword.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ResetPassword.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ResetPasswordConfirmation.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/Account/ResetPasswordConfirmation.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/AddTeacher.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/AddTeacher.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/Teachers.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Admin/Teachers.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Exercise/Create.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Exercise/Create.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Exercise/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Exercise/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Registration/RegisterStudent.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Registration/RegisterStudent.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/AddResult.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/AddResult.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/ClassList.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/ClassList.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/ExerciseList.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Result/ExerciseList.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/SchoolClasses/ClassResults.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/SchoolClasses/ClassResults.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/SchoolClasses/List.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/SchoolClasses/List.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Classes.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Classes.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/StudentClass.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/StudentClass.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/StudentResult.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/StudentResult.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/_CreateUpdateStudent.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/Razor/Views/Student/_CreateUpdateStudent.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/netcoreapp2.1/UI.pdb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,11 +235,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/AppServices/AddExerciseCommand.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+            <state relative-caret-position="360">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <marker date="1554477865240" expanded="false" signature="6:103" ph="..." />
                 <marker date="1554477865240" expanded="true" signature="131:1280" ph="{...}" />
@@ -187,20 +254,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/AppServices/GetStudentQuery.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Core/Core.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="15" column="43" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="43" />
-              <folding>
-                <marker date="1554476583350" expanded="false" signature="6:42" ph="..." />
-                <marker date="1554476583350" expanded="true" signature="70:711" ph="{...}" />
-                <marker date="1554476583350" expanded="true" signature="131:709" ph="{...}" />
-                <marker date="1554476583350" expanded="true" signature="176:217" ph="{...}" />
-                <marker date="1554476583350" expanded="true" signature="337:703" ph="{...}" />
-                <marker date="1554476583350" expanded="true" signature="486:550" ph="{...}" />
-                <marker date="1554476583350" expanded="true" signature="608:693" ph="{...}" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -252,7 +310,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ont-awe</find>
       <find>el=&quot;sty</find>
       <find>otstrap-com</find>
       <find>ref=&quot;</find>
@@ -282,6 +339,7 @@
       <find>loo uus</find>
       <find>&lt;a</find>
       <find>GetData</find>
+      <find>&quot;Microsoft.Extens</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -324,23 +382,23 @@
     <setting file="file://$PROJECT_DIR$/Core/Data/Repositories/ExerciseRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Data/Repositories/PersonRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/GetStudentsResultsInExerciseQuery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetClassListQuery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetClassQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetClassListQuery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetClassQuery.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/ViewModels/Registrations/RegisterVm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/AddExerciseCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/AddExerciseCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/471AC734-C8BB-405B-9F0A-03148D26B96A/70/4c2b8028/SmtpClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/InviteUsedCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/GetUnitListQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/GetUnitQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/AddUnitCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/AddUnitCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3416F7F4-F4EC-454A-B354-95DE7423B688/ee/00f0470b/EventSource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetExerciseListQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetExerciseListQuery.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Areas/Identity/Pages/Account/ExternalLogin.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63FD20E7-F62E-4646-ADA5-49B85AD64ADD/40/356b71fc/SmtpTransport.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/TeacherRegistrationCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetExerciseQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetExerciseQuery.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Areas/Identity/Pages/Account/Logout.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/ViewModels/Teachers/AddTeacherVm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Controllers/TeacherController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -410,12 +468,12 @@
     <setting file="file://$PROJECT_DIR$/UI/Views/Exercise/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Views/Exercise/Create.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetInviteQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetInviteQuery.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/GetStudentQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4093731C-12E0-4C7E-9170-B36F23EE9763/c0/8366f3da/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/AppServices/StudentInviteCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetStudentListQuery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetAppUserListQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetStudentListQuery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/AppServices/GetAppUserListQuery.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Messages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Views/Chart/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
@@ -424,7 +482,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebApplication2/Controllers/SchoolClassesController.cs" />
         <option value="$PROJECT_DIR$/Core/Class1.cs" />
         <option value="$PROJECT_DIR$/BL/Class1.cs" />
         <option value="$PROJECT_DIR$/Core/ICommand.cs" />
@@ -475,11 +532,12 @@
         <option value="$PROJECT_DIR$/Core/AppServices/StudentInviteCommand.cs" />
         <option value="$PROJECT_DIR$/UI/Startup.cs" />
         <option value="$PROJECT_DIR$/Core/AppServices/AddExerciseCommand.cs" />
+        <option value="$PROJECT_DIR$/Core/Core.csproj" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -508,31 +566,7 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="WebApplication2" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Core" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WebApplication2" type="24d0babc:SolutionExplorerModelNode" />
               <item name="UI" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WebApplication2" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="UI" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WebApplication2" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="UI" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ViewModels" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WebApplication2" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="UI" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ViewModels" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Students" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -626,12 +660,12 @@
       <workItem from="1553776016958" duration="38609000" />
       <workItem from="1553961802723" duration="17067000" />
       <workItem from="1554043269872" duration="59277000" />
-      <workItem from="1554453901160" duration="22052000" />
+      <workItem from="1554453901160" duration="23004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175198000" />
+    <option name="totallyTimeSpent" value="176150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,21 +677,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8717557" visible="true" weight="0.23200859" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8717557" visible="true" weight="0.23200859" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.12824428" side_tool="true" weight="0.22234157" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25617978" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25617978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.552809" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32921347" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32921347" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.42022473" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -666,7 +700,7 @@
       <window_info anchor="bottom" id="REST Client" order="12" weight="0.42022473" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.26516855" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.35617977" />
       <window_info anchor="bottom" id="Performance Profiler" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -837,39 +871,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/UI/Views/Student/StudentResult.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <marker date="1554476290215" expanded="true" signature="61:112" ph="@..." />
-            <marker date="1554476290215" expanded="true" signature="225:1055" ph="&lt;table.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="320:468" ph="&lt;thead.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="332:455" ph="&lt;tr.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="473:1046" ph="&lt;tbody.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="485:1033" ph="@..." />
-            <marker date="1554476290215" expanded="true" signature="561:1033" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="576:1027" ph="&lt;tr.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="800:1013" ph="&lt;td.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="1057:2678" ph="&lt;script.../&gt;" />
-            <marker date="1554476290215" expanded="true" signature="1083:2666" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1156:1264" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1293:2657" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1374:2316" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1407:1475" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1508:1587" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1623:1687" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1720:1798" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1831:1973" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="1868:1947" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="2012:2294" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="2048:2268" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="2094:2179" ph="{...}" />
-            <marker date="1554476290215" expanded="true" signature="2427:2584" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/Views/SchoolClasses/List.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1668,8 +1669,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/AppServices/AddExerciseCommand.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+        <state relative-caret-position="360">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <marker date="1554477865240" expanded="false" signature="6:103" ph="..." />
             <marker date="1554477865240" expanded="true" signature="131:1280" ph="{...}" />
@@ -1680,6 +1681,13 @@
             <marker date="1554477865240" expanded="true" signature="924:1262" ph="{...}" />
             <marker date="1554477865240" expanded="true" signature="1015:1121" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Core.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

@@ -96,7 +96,7 @@ using WebApplication2.Data.Entities;
             WriteLiteral("        <tr>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(589, 458, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63385033396744d8887e51f38560843e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3834b312e2f9422e8ec657aedfcd21a8", async() => {
                 BeginContext(655, 68, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"SelectedExerciseId\"");
                 EndContext();
@@ -164,7 +164,7 @@ WriteAttributeValue("", 895, manId, 895, 6, false);
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n\r\n                ");
             EndContext();
             BeginContext(1104, 458, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e09e8f950944fd2a334092732a38151", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "776021a104ff4136be5c849f26bb87af", async() => {
                 BeginContext(1170, 68, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"SelectedExerciseId\"");
                 EndContext();
