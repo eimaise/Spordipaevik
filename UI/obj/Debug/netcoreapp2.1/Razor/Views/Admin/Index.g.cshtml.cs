@@ -82,7 +82,7 @@ using WebApplication2.ViewModels.Exercises;
 #line default
 #line hidden
             BeginContext(185, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6bd0729585b94df798d0bc09aaf29364", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51db98486bfb4bbe9180e428a275fe31", async() => {
                 BeginContext(243, 30, true);
                 WriteLiteral("Mitte registreerinud kasutajad");
                 EndContext();
@@ -132,7 +132,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("<div class=\"row\">\r\n    <div class=\"col\">\r\n        ");
             EndContext();
             BeginContext(525, 329, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a37844cace90473d8dc59268b87a9545", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1efe8be6d0314761a0c5e2c3093774fc", async() => {
                 BeginContext(569, 278, true);
                 WriteLiteral(@"
             <label style=""margin-top: 10px"">Õpilase nimi:</label>
@@ -190,7 +190,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("                <tr>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1500, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "873792e5dcb14b4ca6dbef492dfd84fd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2988dd8124af45f8a8e0d4fc09640345", async() => {
                 BeginContext(1580, 13, false);
 #line 46 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Views\Admin\Index.cshtml"
                                                                                                   Write(student.Email);
@@ -298,7 +298,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("                    <td>\r\n                        ");
             EndContext();
             BeginContext(3211, 326, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4ec9dbb3a74cef9edcaf70b51743d7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "207a76e9d1414952a2ab64a13ffb3495", async() => {
                 BeginContext(3267, 91, true);
                 WriteLiteral("\r\n                            <input class=\"btn btn-primary\" type=\"hidden\" name=\"studentId\"");
                 EndContext();
@@ -369,7 +369,7 @@ WriteAttributeValue("", 3366, student.Id, 3366, 11, false);
             WriteLiteral("            </tbody>\r\n        </table>\r\n        <div class=\"col\">\r\n            ");
             EndContext();
             BeginContext(3866, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb0043a79dc7462e865c95b03e9595c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "811681face4448c6a7c08e2b826092ca", async() => {
                 BeginContext(3942, 12, true);
                 WriteLiteral("Lisa õpilane");
                 EndContext();

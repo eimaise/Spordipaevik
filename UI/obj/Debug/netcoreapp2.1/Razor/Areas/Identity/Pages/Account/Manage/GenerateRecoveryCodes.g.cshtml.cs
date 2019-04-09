@@ -23,11 +23,6 @@ using WebApplication2.Areas.Identity;
 
 #line default
 #line hidden
-#line 3 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\_ViewImports.cshtml"
-using WebApplication2.Data.Entities;
-
-#line default
-#line hidden
 #line 1 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using WebApplication2.Areas.Identity.Pages.Account;
 
@@ -39,7 +34,7 @@ using WebApplication2.Areas.Identity.Pages.Account.Manage;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d79a0bd2e3fbed188c4e28ebe4705237a2234ba1", @"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"999b62b50c1aa0839d5a021a6436bfdf43d75aef", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"df29ad7e67f523d54b3f79618a0e5cdfa7f2f16e", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cf7abb686621821f63724bc2c251bdaa288c8fc9", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"92176ee51a0d794bc45b672b32de8e6eb9ab4363", @"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_Manage_GenerateRecoveryCodes : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
@@ -113,7 +108,7 @@ Write(ViewData["Title"]);
         used in an authenticator app you should ");
             EndContext();
             BeginContext(781, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "868f39d97d2140589968602e6310d1c7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eeaf3269b7974f61b98db6c391f0cb8b", async() => {
                 BeginContext(816, 30, true);
                 WriteLiteral("reset your authenticator keys.");
                 EndContext();
@@ -135,7 +130,7 @@ Write(ViewData["Title"]);
             WriteLiteral("\r\n    </p>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(881, 139, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ad8b708f9574cf181ebbe509ea862d8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b336761046b94bf08306e39685c5f2c6", async() => {
                 BeginContext(920, 93, true);
                 WriteLiteral("\r\n        <button class=\"btn btn-danger\" type=\"submit\">Generate Recovery Codes</button>\r\n    ");
                 EndContext();

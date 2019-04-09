@@ -126,7 +126,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("            </td>\r\n            <td>\r\n                REKORD\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(772, 554, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c72f000d61147398fc2dc58e807aa62", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12b74819951b4350b5a7890881562288", async() => {
                 BeginContext(860, 68, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"SelectedExerciseId\"");
                 EndContext();

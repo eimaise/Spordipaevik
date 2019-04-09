@@ -23,11 +23,6 @@ using WebApplication2.Areas.Identity;
 
 #line default
 #line hidden
-#line 3 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\_ViewImports.cshtml"
-using WebApplication2.Data.Entities;
-
-#line default
-#line hidden
 #line 1 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using WebApplication2.Areas.Identity.Pages.Account;
 
@@ -39,7 +34,7 @@ using WebApplication2.Areas.Identity.Pages.Account.Manage;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0723a602e84d5a261d35f2702dcc54883c69cad5", @"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"999b62b50c1aa0839d5a021a6436bfdf43d75aef", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"df29ad7e67f523d54b3f79618a0e5cdfa7f2f16e", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cf7abb686621821f63724bc2c251bdaa288c8fc9", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"92176ee51a0d794bc45b672b32de8e6eb9ab4363", @"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_Manage__StatusMessage : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<string>

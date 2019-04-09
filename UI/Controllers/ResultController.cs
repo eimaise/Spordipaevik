@@ -85,13 +85,8 @@ namespace WebApplication2.Controllers
             var exercise = _messages.Dispatch(new GetExerciseQuery(model.SelectedExerciseId));
             var student = _messages.Dispatch(new GetStudentQuery(model.StudentId));
 
-            var result = new Result
-            {
-                 StudentId = student.Id,
-                ExerciseId = exercise.Id,
-                ClassName = aclass.Name,
-                Value = model.Result,
-            };
+            var result = new Result(student, exercise.Id, new ResultValue(exercise.Unit.Name, model.Result));
+            
             _context.Results.Add(result);
             _context.SaveChanges();
             

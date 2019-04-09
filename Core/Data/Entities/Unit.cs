@@ -1,6 +1,6 @@
 namespace Core.Data.Entities
 {
-    public class Unit
+    public class Unit : ValueObject<ResultValue>
     {
         protected Unit()
         {

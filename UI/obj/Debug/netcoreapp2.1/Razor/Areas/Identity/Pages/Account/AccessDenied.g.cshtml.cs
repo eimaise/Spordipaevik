@@ -23,18 +23,13 @@ using WebApplication2.Areas.Identity;
 
 #line default
 #line hidden
-#line 3 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\_ViewImports.cshtml"
-using WebApplication2.Data.Entities;
-
-#line default
-#line hidden
 #line 1 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using WebApplication2.Areas.Identity.Pages.Account;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51703e521ebe79ffdaf52eb053830c6a91582181", @"/Areas/Identity/Pages/Account/AccessDenied.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"999b62b50c1aa0839d5a021a6436bfdf43d75aef", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"df29ad7e67f523d54b3f79618a0e5cdfa7f2f16e", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cf7abb686621821f63724bc2c251bdaa288c8fc9", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_AccessDenied : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {

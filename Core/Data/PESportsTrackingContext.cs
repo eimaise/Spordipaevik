@@ -2,6 +2,7 @@ using Core.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Core.Data
 {
@@ -60,11 +61,12 @@ namespace Core.Data
                 .HasMany(x => x.Results)
                 .WithOne(x => x.Student)
                 .HasForeignKey(x => x.StudentId);
-
+            modelBuilder.Entity<Result>().OwnsOne(o => o.ResultValue);
             // for seeding data
 //            modelBuilder.Entity<ApplicationUser>()
 //                .HasData(new ApplicationUser());
         }
 
+       
     }
 }
