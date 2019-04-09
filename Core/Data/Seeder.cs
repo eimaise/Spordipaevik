@@ -139,14 +139,7 @@ namespace Core.Data
             for (int i = 0; i < 10; i++)
             {
                 var value = new decimal(rnd.NextDouble() +i);
-                var result = new Result
-                {
-                    Value = value,
-                    StudentId = student.Id,
-                    ExerciseId = exercise.Id,
-                    CreatedOn = DateTime.Today.AddMonths(-i),
-                    ClassName = "4A",
-                };
+                var result = new Result(student, exercise.Id, new ResultValue(exercise.Unit.Name, value));
                 _ctx.Results.Add(result);
             }
             

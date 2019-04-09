@@ -94,7 +94,7 @@ using WebApplication2.ViewModels.Exercises;
 #line default
 #line hidden
             BeginContext(198, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58802a261f4048f1bad6a0360276deea", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0754cd42012e4e449ba12711901d6a6c", async() => {
                 BeginContext(249, 14, true);
                 WriteLiteral(" lisa õpetaja ");
                 EndContext();
