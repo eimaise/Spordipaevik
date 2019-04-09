@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebApplication2.Data.Entities;
@@ -28,9 +29,8 @@ namespace Core.Data.Entities
         public bool Used { get; set; }
         public string Email { get; set; }
     }
-    public class Invite
+    public class Invite : BaseEntity
     {
-        public int Id { get; set; }
         public int StudentId { get; set; }
         public virtual Student Student { get; set; }
         public string Token { get; set; }

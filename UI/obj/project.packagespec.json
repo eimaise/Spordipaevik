@@ -41,11 +41,7 @@
           "target": "Package",
           "version": "[2.1.2, )"
         },
-        "Microsoft.EntityFrameworkCore.Proxies": {
-          "target": "Package",
-          "version": "[2.1.1, )"
-        },
-        "Microsoft.EntityFrameworkCore.SqlServer": {
+        "Microsoft.EntityFrameworkCore.Sqlite": {
           "target": "Package",
           "version": "[2.1.8, )"
         },
@@ -55,13 +51,13 @@
           "version": "[2.1.0, )",
           "autoReferenced": true
         },
-        "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+        "Npgsql.EntityFrameworkCore.PostgreSQL": {
           "target": "Package",
-          "version": "[2.1.1, )"
+          "version": "[2.1.2, )"
         },
-        "bootstrap": {
+        "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
           "target": "Package",
-          "version": "[4.3.1, )"
+          "version": "[1.1.1, )"
         }
       },
       "imports": [

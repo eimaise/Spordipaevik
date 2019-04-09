@@ -6,7 +6,7 @@ namespace Core.Data.Entities
 {
     public class Result : BaseEntity
     {
-        public Result()
+        public Result(Student student,Exercise exercise)
         {
             CreatedOn = DateTime.Now;
 

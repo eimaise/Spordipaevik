@@ -6,6 +6,7 @@ using Core;
 using Core.AppServices;
 using Core.Data;
 using Core.Data.Entities;
+using Core.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -80,9 +81,13 @@ namespace WebApplication2
                 .AddEntityFrameworkStores<PeSportsTrackingContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddDbContext<PeSportsTrackingContext>(o=>o.UseSqlServer(
-                Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies()
-            );
+            services.AddDbContext<PeSportsTrackingContext>(o=>o.UseNpgsql(
+                Configuration.GetConnectionString("SportTracerConnectionString")));
+            
+            //MS SQL SERVERI OMA 
+//            services.AddDbContext<PeSportsTrackingContext>(o=>o.UseSqlServer(
+//                    Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies()
+//            );
             
                void CoreCommandAndQueryServicesShouldBeMoved()
             {

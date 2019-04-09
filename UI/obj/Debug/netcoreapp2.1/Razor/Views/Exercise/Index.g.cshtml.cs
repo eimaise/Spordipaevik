@@ -65,7 +65,7 @@ using WebApplication2.ViewModels.Exercises;
 #line default
 #line hidden
             BeginContext(104, 114, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1146ccfa3874338bb86b3d0a4a97fb3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a29d9b236a4ab3b34ca4a6fb34ec6c", async() => {
                 BeginContext(190, 24, true);
                 WriteLiteral("\r\n    Loo uus harjutus\r\n");
                 EndContext();

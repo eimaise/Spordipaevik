@@ -75,7 +75,7 @@ using WebApplication2.ViewModels.Exercises;
             WriteLiteral("            ");
             EndContext();
             BeginContext(224, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5c2ec02b1c14b918d030d7e13cf0161", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cde7f692edd548bdb106c562f24562ab", async() => {
                 BeginContext(319, 16, false);
 #line 9 "C:\Users\MartinSaar\RiderProjects\WebApplication2\UI\Views\Student\StudentClass.cshtml"
                                                                                                      Write(schoolClass.Name);

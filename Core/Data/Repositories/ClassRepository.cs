@@ -1,10 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Data;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data.Entities;
 
-namespace WebApplication2.Data.Repositories
+namespace Core.Data.Repositories
 {
     public interface IClassRepository
     {

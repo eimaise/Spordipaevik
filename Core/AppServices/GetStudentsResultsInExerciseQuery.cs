@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Data;
@@ -27,7 +28,7 @@ namespace Core.AppServices
 
             public List<Result> Handle(GetStudentsResultsInExerciseQuery query )
             {
-                return _context.Results.Where(x=>query.StudentIds.Contains(x.Id) && x.ExerciseId == query.ExerciseId).ToList();
+                return _context.Results.Where(x=>query.StudentIds.Contains(x.StudentId) && x.ExerciseId == query.ExerciseId).ToList();
             }
         }
     }

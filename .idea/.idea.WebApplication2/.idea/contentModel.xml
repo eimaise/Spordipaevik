@@ -16,7 +16,66 @@
         </e>
       </e>
       <e p="Core" t="IncludeRecursive">
+        <e p="AppServices" t="Include">
+          <e p="AddExerciseCommand.cs" t="Include" />
+          <e p="AddUnitCommand.cs" t="Include" />
+          <e p="GetAppUserListQuery.cs" t="Include" />
+          <e p="GetClassListQuery.cs" t="Include" />
+          <e p="GetClassQuery.cs" t="Include" />
+          <e p="GetExerciseListQuery.cs" t="Include" />
+          <e p="GetExerciseQuery.cs" t="Include" />
+          <e p="GetInviteQuery.cs" t="Include" />
+          <e p="GetStudentListQuery.cs" t="Include" />
+          <e p="GetStudentQuery.cs" t="Include" />
+          <e p="GetStudentsResultsInExerciseQuery.cs" t="Include" />
+          <e p="GetUnitListQuery.cs" t="Include" />
+          <e p="GetUnitQuery.cs" t="Include" />
+          <e p="InviteUsedCommand.cs" t="Include" />
+          <e p="StudentInviteCommand.cs" t="Include" />
+          <e p="TeacherRegistrationCommand.cs" t="Include" />
+        </e>
+        <e p="Bin" t="ExcludeRecursive" />
         <e p="Core.csproj" t="IncludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="Entities" t="Include">
+            <e p="ApplicationUser.cs" t="Include" />
+            <e p="EexerciseType.cs" t="Include" />
+            <e p="Result.cs" t="Include" />
+            <e p="SchoolClass.cs" t="Include" />
+            <e p="Student.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+          </e>
+          <e p="PESportsTrackingContext.cs" t="Include" />
+          <e p="Repositories" t="Include">
+            <e p="ClassRepository.cs" t="Include" />
+            <e p="ExerciseRepository.cs" t="Include" />
+            <e p="PersonRepository.cs" t="Include" />
+          </e>
+          <e p="Seeder.cs" t="Include" />
+        </e>
+        <e p="ICommand.cs" t="Include" />
+        <e p="IQuery.cs" t="Include" />
+        <e p="Messages.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="Infrastructure" t="IncludeRecursive">
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="EmailService" t="Include" />
+        <e p="Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="Infrastructure.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="UI" t="IncludeRecursive">

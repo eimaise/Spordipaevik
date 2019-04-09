@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using Core;
 using Core.AppServices;
 using Core.Data;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 using WebApplication2.Services;
 using WebApplication2.ViewModels.Exercises;
 
