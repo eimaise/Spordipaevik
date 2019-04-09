@@ -7,7 +7,6 @@ using Core.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 using WebApplication2.Data.Repositories;
 using WebApplication2.ViewModels.Exercises;
 using WebApplication2.ViewModels.Results;

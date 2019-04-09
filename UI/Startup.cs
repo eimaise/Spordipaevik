@@ -22,7 +22,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using WebApplication2.Controllers;
 using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 using WebApplication2.Data.Repositories;
 using WebApplication2.Services;
 

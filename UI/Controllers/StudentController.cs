@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 using WebApplication2.ViewModels.Results;
 using WebApplication2.ViewModels.Students;
 

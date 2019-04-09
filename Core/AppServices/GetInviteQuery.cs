@@ -1,7 +1,6 @@
 using System.Linq;
 using Core.Data;
 using Core.Data.Entities;
-using WebApplication2.Data.Entities;
 
 namespace Core.AppServices
 {

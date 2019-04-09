@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using WebApplication2.Data.Entities;
+using Core.Data.Entities;
 
 namespace WebApplication2.ViewModels.Exercises
 {

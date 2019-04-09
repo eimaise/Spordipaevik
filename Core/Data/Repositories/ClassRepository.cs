@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using WebApplication2.Data.Entities;
 
 namespace Core.Data.Repositories
 {

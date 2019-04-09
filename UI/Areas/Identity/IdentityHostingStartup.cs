@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 
 [assembly: HostingStartup(typeof(WebApplication2.Areas.Identity.IdentityHostingStartup))]
 namespace WebApplication2.Areas.Identity

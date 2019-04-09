@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using WebApplication2.Data.Entities;
 
 namespace Core.Data
 {

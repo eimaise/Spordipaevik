@@ -2,7 +2,6 @@ using Core.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplication2.Data.Entities;
 
 namespace Core.Data
 {

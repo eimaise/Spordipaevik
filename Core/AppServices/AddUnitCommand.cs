@@ -1,5 +1,5 @@
 using Core.Data;
-using WebApplication2.Data.Entities;
+using Core.Data.Entities;
 using Result = CSharpFunctionalExtensions.Result;
 
 namespace Core.AppServices

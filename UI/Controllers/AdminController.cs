@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
-using WebApplication2.Data.Entities;
 
 namespace WebApplication2.Controllers
 {

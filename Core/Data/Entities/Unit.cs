@@ -1,4 +1,4 @@
-namespace WebApplication2.Data.Entities
+namespace Core.Data.Entities
 {
     public class Unit
     {

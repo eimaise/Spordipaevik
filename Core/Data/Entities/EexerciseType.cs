@@ -1,7 +1,4 @@
-using System;
-using Microsoft.AspNetCore.Identity.UI.Pages.Internal.Account;
-
-namespace WebApplication2.Data.Entities
+namespace Core.Data.Entities
 {
     public class BaseEntity
     {

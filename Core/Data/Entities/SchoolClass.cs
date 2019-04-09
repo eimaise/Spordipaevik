@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Core.Data.Entities;
 
-namespace WebApplication2.Data.Entities
+namespace Core.Data.Entities
 {
     public class SchoolClass : BaseEntity
     {

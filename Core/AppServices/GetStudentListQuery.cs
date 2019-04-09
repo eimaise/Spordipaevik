@@ -5,7 +5,6 @@ using Core.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using NHibernate.Mapping.ByCode.Impl;
-using WebApplication2.Data.Entities;
 
 namespace Core.AppServices
 {
