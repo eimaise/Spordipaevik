@@ -1,0 +1,42 @@
+﻿@model WebApplication2.ViewModels.Results.LeaderBoardResultListVm
+
+@{
+    ViewData["Title"] = "Harjutused";
+}
+<form method="get" asp-action="LeaderboardResults">
+    <div class="form-group">
+        <label>Viimased aastad :</label>
+        <input class="form-control" name="year" type="number"/>
+        <input name="ExerciseId" type="hidden" value="@Model.ExerciseId"/>
+        <input name="ClassNumber" type="hidden" value="@Model.ClassNumber"/>
+        <input  name="Gender" type="hidden" value="@Model.Gender"/>
+        <button class="btn btn-success" type="submit">Vali</button>
+    </div>
+</form>
+<table  class="table table-striped table-bordered nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Nimi</th>
+        <th>Tulemus</th>
+        <th>Kuupäev</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var result in Model.LeaderBoardResult)
+    {
+        <tr>
+            <td>
+                <p>@result.Name</p>
+            </td>
+            <td>
+                <p>@result.ResultValue</p>
+            </td>
+            <td>
+                <p>@result.DateTime.ToString()</p>
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

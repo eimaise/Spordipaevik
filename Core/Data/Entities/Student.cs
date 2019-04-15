@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Core.Data.Entities
 {
@@ -13,30 +12,25 @@ namespace Core.Data.Entities
         public string Email { get; set; }
         public string StudentCardNumber { get; set; }
         public Gender Gender { get; set; }
-        public bool InviteSent { get; set; }
-        public bool RegisteredInSystem { get; set; }
+        public bool InviteSent => Invite != null;
+        public bool RegisteredInSystem { get; private set; }
         public virtual Invite Invite { get; set; }
         public int? InviteId { get; set; }
         
         //TODO: oleks vaja privateiks muuta, 
         public virtual ICollection<Result> Results { get; set; }
+        public void AddInvite(Invite invite)
+        {
+            Invite = invite;
+        }
+
+        public void MarkInviteUsed()
+        {
+            Invite.MarkInviteUsed();
+            RegisteredInSystem = true;
+        }
     }
-    public class TeacherRegistration
-    {
-        public int Id { get; set; }
-        public string Token { get; set; }
-        public bool Used { get; set; }
-        public string Email { get; set; }
-    }
-    public class Invite : BaseEntity
-    {
-        public int StudentId { get; set; }
-        public virtual Student Student { get; set; }
-        public string Token { get; set; }
-        public bool Used { get; set; }
-        public string Email { get; set; }
-    }
-   
+
 
     public enum Gender
     {

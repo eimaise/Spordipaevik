@@ -1,30 +1,85 @@
-﻿@model IEnumerable<WebApplication2.ViewModels.Exercises.ExerciseVm>
+﻿@using Core.Data.Entities
+@model ExerciseListVm
 @{
     ViewData["Title"] = "Harjutused";
 }
 
-    <h1>Vali harjutus :</h1>
+<div class="row">
+    <div class="col">
+            <div class="form-group">
+        <form asp-action="ExerciseList" method="get">
+                <h2 style="margin-top: 10px">Leia harjutus:</h2>
+               <input id="findInput" placeholder="Otsi harjutust" class="form-control " style="margin-bottom: 10px" name="name" type="text" value=@Context.Request.Query["name"]>
+           
+                <button style="margin-bottom: 10px" class="btn btn-primary">Otsi</button>
+                <a style="margin-bottom:10px" class="btn btn-success "asp-action="Create"asp-controller="Exercise" method="get">
+                    Loo uus harjutus
+                </a>
+               
+        </form>
+            </div>
+    </div>
+</div>
+
 <div class="row-3">
-    
-    <table  class="table table-striped table-bordered nowrap" style="width: 100%">
+    <table class="table table-striped table-bordered nowrap" style="width: 100%">
         <thead>
         <tr>
             <th>Harjutus</th>
-            <th>Kommentaar</th>
+            <th>Klass</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach (var exercise in Model)
-        {
-            <tr>
-                <td> @exercise.Name</td>
-                <td>@exercise.Comment</td>
-                <td>  <a style="margin-top: 10px"class="btn btn-info" asp-controller="Result" asp-action="ClassList" asp-route-exerciseId="@exercise.Id">
-                    <p>Lisa tulemus</p>
-                </a></td>
-            </tr>
-        }
+            <form asp-action="AddResult" asp-controller="Result" method="get">
+
+                <tr>
+                    <td>
+                        @* <p>@exercise.Name</p> *@
+                        @* <p class="small">@exercise.Comment</p> *@
+                        <div class="form-group">
+                            @{
+                                var exerciselist = new SelectList(Model.Exercises, "Id", "Name");
+                                if (!exerciselist.Any())
+                                {
+                                    <a style="margin-bottom:10px" class="btn btn-primary "asp-action="ExerciseList" method="get">
+                                        Näita kõiki
+                                    </a>
+                                    <p>Ühtegi harjutust ei leitud : <label id="inputLabel">@Context.Request.Query["name"]</label> </p>
+                                }
+                                else
+                                {
+                                    <select class="form-control"name="selectedExerciseId" asp-items="exerciselist">
+                                    </select>
+                                    
+                                }
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            @{
+                                var list = new SelectList(Model.Classes, "Id", "Name");
+                                <select class="form-control"asp-for="SelectedClassId" asp-items="list">
+                                </select>
+                            }
+                        </div>
+                        <div class="form-group">
+                            @{
+                                var sugu = new {Id = (int) Gender.Man, Name = "Poisid"};
+                                var sugu2 = new {Id = (int) Gender.Woman, Name = "Tüdrukud"};
+
+                                var list2 = new SelectList(new[] {sugu, sugu2}.ToList(), "Id", "Name");
+                                <select class="form-control" name="gender" asp-items="list2">
+                                </select>
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary"type="submit">Lisa tulemusi</button>
+                    </td>
+                </tr>
+            </form>
         </tbody>
     </table>
 </div>

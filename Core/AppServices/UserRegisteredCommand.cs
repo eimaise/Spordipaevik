@@ -5,16 +5,16 @@ using Result = CSharpFunctionalExtensions.Result;
 
 namespace Core.AppServices
 {
-    public sealed class InviteUsedCommand : ICommand
+    public sealed class UserRegisteredCommand : ICommand
     {
-        public Invite Invite{ get; }
+        public Student Student{ get; }
 
-        public InviteUsedCommand(Invite invite)
+        public UserRegisteredCommand(Student student)
         {
-            Invite = invite;
+            Student = student;
         }
 
-        public class InviteUsedCommandHandler : ICommandHandler<InviteUsedCommand>
+        public class InviteUsedCommandHandler : ICommandHandler<UserRegisteredCommand>
         {
             private readonly PeSportsTrackingContext _context;
 
@@ -23,10 +23,11 @@ namespace Core.AppServices
                 _context = context;
             }
 
-            public Result Handle(InviteUsedCommand command)
+            public Result Handle(UserRegisteredCommand command)
             {
-                command.Invite.Used = true;
-                _context.Invites.Update(command.Invite);
+                var student = command.Student;
+                student.MarkInviteUsed();
+                _context.Students.Update(command.Student);
                 _context.SaveChanges();
                 return Result.Ok();
             }

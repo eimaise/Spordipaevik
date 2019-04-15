@@ -5,12 +5,11 @@
     Layout = "_Layout";
 }
 
-@* <h2>sinu token on @Model.Token</h2> *@
+<h2>sinu token on @Model.Token</h2>
 
 <form method="post" asp-action="RegisterStudent">
     <div asp-validation-summary="All" class="text-danger"></div>
     <input asp-for="Token" type="hidden" value="@Model.Token"/>
-
     <div class="form-group">
         <label asp-for="StudentCardNr"></label>
         <input asp-for="StudentCardNr" class="form-control" aria-describedby="emailHelp" placeholder="Sisesta õpilaspileti nr"/>

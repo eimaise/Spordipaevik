@@ -46,28 +46,27 @@ namespace WebApplication2.Controllers
                     return Json("Midagi läks valesti, võta ühendust kooli administraatoriga või proovi uuesti");
                 }
 
-
                 var student = _messages.Dispatch(new GetStudentQuery(invite.StudentId));
                 if (student == null)
                 {
                     return Json("Sellist õpilast ei leitud");
                 }
 
-//                else
-//                {
-//                    userName = invite.Email;
-//                    role = "Teacher";
-//                }
+                if (student.StudentCardNumber != model.StudentCardNr)
+                {
+                    return Json("Vale õpilaspileti number");
+
+                }
                 var user = new ApplicationUser
                 {
-                    UserName = invite.Student.StudentCardNumber
+                    UserName = student.StudentCardNumber.Replace(" ","")
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 await _userManager.AddToRoleAsync(user, Role.Student);
 
                 if (result.Succeeded)
                 {
-                    _messages.Dispatch(new InviteUsedCommand(invite));
+                    _messages.Dispatch(new UserRegisteredCommand(student));
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -79,10 +78,10 @@ namespace WebApplication2.Controllers
                     }
                 }
 
-                return View();
+                return View(model);
             }
 
-            return View();
+            return View(model);
         }
     }
 }

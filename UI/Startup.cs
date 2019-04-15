@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Core;
 using Core.AppServices;
 using Core.Data;
 using Core.Data.Entities;
-using Core.Data.Repositories;
+using Core.Data.Seeder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -19,22 +15,23 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using WebApplication2.Areas.Identity.Services;
 using WebApplication2.Controllers;
-using WebApplication2.Data;
-using WebApplication2.Data.Repositories;
+using WebApplication2.Mappers;
 using WebApplication2.Services;
 
 namespace WebApplication2
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
         {
             Configuration = configuration;
+            Currentevironment = hostingEnvironment;
         }
 
         public IConfiguration Configuration { get; }
+        private IHostingEnvironment Currentevironment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -47,18 +44,19 @@ namespace WebApplication2
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-//            var connectionString = "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;";
+            //            var connectionString = "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;";
             services.AddTransient<Seeder>();
-            services.AddScoped<IPersonRepository,PersonRepository>();
-            services.AddScoped<IExerciseRepository,ExerciseRepository>();
-            services.AddScoped<IClassRepository,ClassRepository>();
-            services.AddScoped<ISecureTokenGenerator,SecureTokenGenerator>();
+            services.AddScoped<ISecureTokenGenerator, SecureTokenGenerator>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
-            services.AddTransient<IChartDataFactory, ChartDataFactory>();
+            services.AddTransient<IChartDataService, ChartDataService>();
             services.AddTransient<IResultService, ResultService>();
+            services.AddTransient<IStudentMapper, StudentMapper>();
+            services.AddTransient<ITeacherMapper, TeacherMapper>();
+            services.AddTransient<IEmailSender, EmailSender>();
+
 
             //core serviced peaks tõstma ümber
             CoreCommandAndQueryServicesShouldBeMoved();
@@ -80,15 +78,23 @@ namespace WebApplication2
                 .AddEntityFrameworkStores<PeSportsTrackingContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddDbContext<PeSportsTrackingContext>(o=>o.UseNpgsql(
-                Configuration.GetConnectionString("SportTracerConnectionString")));
-            
+//            if (Currentevironment.IsDevelopment())
+//            {
+//                services.AddDbContext<PeSportsTrackingContext>(
+//                    options => options.UseInMemoryDatabase("spordipaevik"));
+//            }
+//            elseS
+//            {
+            services.AddDbContext<PeSportsTrackingContext>(o => o.UseNpgsql(
+                Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies());
+//            }
+
             //MS SQL SERVERI OMA 
-//            services.AddDbContext<PeSportsTrackingContext>(o=>o.UseSqlServer(
-//                    Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies()
-//            );
-            
-               void CoreCommandAndQueryServicesShouldBeMoved()
+            //services.AddDbContext<PeSportsTrackingContext>(o => o.UseSqlServer(
+            //        Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies()
+            //);
+
+            void CoreCommandAndQueryServicesShouldBeMoved()
             {
                 services.AddScoped<Messages>();
                 services
@@ -98,8 +104,8 @@ namespace WebApplication2
                     .AddTransient<ICommandHandler<StudentInviteCommand>,
                         StudentInviteCommand.StudentInviteCommandHandler>();
                 services
-                    .AddTransient<ICommandHandler<InviteUsedCommand>,
-                        InviteUsedCommand.InviteUsedCommandHandler>();
+                    .AddTransient<ICommandHandler<UserRegisteredCommand>,
+                        UserRegisteredCommand.InviteUsedCommandHandler>();
                 services
                     .AddTransient<IQueryHandler<GetUnitQuery, Unit>,
                         GetUnitQuery.GetUnitQueryHandler>();
@@ -144,9 +150,24 @@ namespace WebApplication2
                 services
                     .AddTransient<ICommandHandler<AddExerciseCommand>,
                         AddExerciseCommand.AddExerciseCommandHandler>();
+                services
+                    .AddTransient<ICommandHandler<EditStudentCommand>,
+                        EditStudentCommand.EditStudentCommandHandler>();
+                services
+                    .AddTransient<IQueryHandler<GetResultQuery, Result>,
+                        GetResultQuery.GetResultQueryHandler>();
+                services
+                    .AddTransient<ICommandHandler<EditResultCommand>,
+                        EditResultCommand.EditResultCommandHandler>();
+                services
+                    .AddTransient<IQueryHandler<GetClassNumberResultsQuery, List<Result>>,
+                        GetClassNumberResultsQuery.GetClassNumberResultsQueryHandler>();
+                services
+                    .AddTransient<IQueryHandler<GetStudentWithStudentCardNoQuery, Student>,
+                        GetStudentWithStudentCardNoQuery.GetStudentWithStudentCardNoQueryHandler>();
             }
         }
-        
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

@@ -9,37 +9,32 @@ namespace Core.Data.Entities
         {
             
         }
-        public Result(Student student,int  exerciseId,ResultValue resultValue)
+        public Result(Student student,int exerciseId,ResultValue resultValue,DateTime createdOn)
         {
-            CreatedOn = DateTime.Now;
-            ClassName = student.SchoolClass.Name;
+            CreatedOn = createdOn;
+            ClassNumber = Helpers.GetClassNumberFromClassName(student.SchoolClass.Name);
+            SchoolClassId = student.SchoolClassId;
             ResultValue = resultValue;
             ExerciseId = exerciseId;
             StudentId = student.Id;
+            Student = student;
         }
 
         public DateTime CreatedOn { get; private set; }
 
-        public string ClassName { get; private set; }
+        public int ClassNumber { get; private set; }
         public virtual Student Student { get; private set; }
         public int StudentId { get; private set; }
+        public int SchoolClassId { get; private set; }
         public virtual Exercise Exercise { get; private set; }
         public int ExerciseId { get; set; }
         [Column(TypeName = "decimal(18, 2)")]
-        public decimal Value { get; private set; }
-        public TimeSpan Time { get; private set; }
-        public ResultValue ResultValue { get; private  set; }
-    }
+        public virtual ResultValue ResultValue { get; private  set; }
+        public bool IsTodaysResult => CreatedOn > DateTime.Today;
 
-    public class ResultValue : ValueObject<ResultValue>
-    {
-        public string UnitName { get; set; }
-        public decimal Value { get; set; }
-
-        public ResultValue(string unitName, decimal value)
+        public void ChangeResultValue(decimal resultValue)
         {
-            UnitName = unitName;
-            Value = value;
+            ResultValue.Value = resultValue;
         }
     }
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApplication2.Controllers
+namespace WebApplication2.ViewModels.Students
 {
     public class StudentResultVm
     {

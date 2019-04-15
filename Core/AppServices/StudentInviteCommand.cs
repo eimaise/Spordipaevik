@@ -9,12 +9,12 @@ namespace Core.AppServices
     public sealed class StudentInviteCommand : ICommand
     {
         public string Token { get; }
-        public int StudentId { get; }
+        public Student Student { get; }
 
-        public StudentInviteCommand(string token, int studentId)
+        public StudentInviteCommand(string token, Student student)
         {
             Token = token;
-            StudentId = studentId;
+            Student = student;
         }
 
         public class StudentInviteCommandHandler : ICommandHandler<StudentInviteCommand>
@@ -28,12 +28,8 @@ namespace Core.AppServices
 
             public Result Handle(StudentInviteCommand command)
             {
-                var invite = new Invite
-                {
-                    Token = command.Token,
-                    StudentId = command.StudentId,
-                };
-                _context.Invites.Add(invite);
+                command.Student.AddInvite(new Invite(command.Student.Id, command.Token, false, command.Student.Email));
+                _context.Students.Update(command.Student);
                 _context.SaveChanges();
                 return Result.Ok();
             }

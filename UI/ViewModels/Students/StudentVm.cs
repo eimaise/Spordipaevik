@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.Data.Entities;
+using WebApplication2.ViewModels.Results;
 
 namespace WebApplication2.ViewModels.Students
 {
@@ -8,16 +9,13 @@ namespace WebApplication2.ViewModels.Students
         public int Id { get; set; }
         public string Name { get; set; }
         public Gender Gender { get; set; }
-        public IEnumerable<string> Results { get; set; } = new List<string>();
-    }
-    public class AddStudentVm
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Gender Gender { get; set; }
-        public string StudentCardNumber { get; set; }
-        public string Email { get; set; }
-        public int SchoolClassId { get; set; }
-        public IEnumerable<SchoolClass> SchoolClasses { get; set; } = new List<SchoolClass>();
+        public IEnumerable<ResultVm> Results { get; set; } = new List<ResultVm>();
+        public string BestResult { get; set; }
+
+        public class ResultVm
+        {
+            public int Id { get; set; }
+            public string ResultValue { get; set; }
+        }
     }
 }

@@ -10,10 +10,10 @@
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
-      "netcoreapp2.1"
+      "netcoreapp2.2"
     ],
     "frameworks": {
-      "netcoreapp2.1": {
+      "netcoreapp2.2": {
         "projectReferences": {}
       }
     },
@@ -24,7 +24,7 @@
     }
   },
   "frameworks": {
-    "netcoreapp2.1": {
+    "netcoreapp2.2": {
       "dependencies": {
         "CSharpFunctionalExtensions": {
           "target": "Package",
@@ -32,17 +32,29 @@
         },
         "Microsoft.AspNetCore.All": {
           "target": "Package",
-          "version": "[2.1.1, )"
+          "version": "[2.2.0, )"
+        },
+        "Microsoft.AspNetCore.Identity": {
+          "target": "Package",
+          "version": "[2.2.0, )"
+        },
+        "Microsoft.AspNetCore.Identity.UI": {
+          "target": "Package",
+          "version": "[2.2.0, )"
         },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",
           "target": "Package",
-          "version": "[2.1.0, )",
+          "version": "[2.2.0, )",
           "autoReferenced": true
         },
         "NHibernate": {
           "target": "Package",
           "version": "[5.2.5, )"
+        },
+        "Npgsql.EntityFrameworkCore.PostgreSQL": {
+          "target": "Package",
+          "version": "[2.2.0, )"
         }
       },
       "imports": [

@@ -1,0 +1,12 @@
+﻿@model Core.Data.Entities.Result
+@{
+    ViewData["Title"] = "Õpilased";
+}
+<h5>Õpilane : @Model.Student.Name</h5>
+<h5>@Model.Exercise.Name</h5>
+
+<form asp-action="EditResult" asp-controller="Result" method="post" style="width: 200px">
+    <input type="hidden" name="resultId" value="@Model.Id"/>
+    <input type="number" step="0.01" name="resultValue" class="form-control" value="@Model.ResultValue.Value"/>
+    <button class="btn btn-success" type="submit">Muuda</button>
+</form>

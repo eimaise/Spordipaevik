@@ -1,0 +1,17 @@
+@model IEnumerable<ExerciseVm>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<h3>Vali harjutus</h3>
+<form>
+    
+@{
+var list = new SelectList(Model, "Id", "Name");
+<select class="form-control" name="id" asp-items="list">
+</select>
+}
+
+<button type="submit" asp-action="StudentResult"  class="btn btn-success">Vaata</button>
+</form>

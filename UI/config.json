@@ -1,6 +1,6 @@
 //{
-//  "ConnectionStrings" : {
-//    "SportTracerConnectionString" : "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;MultipleActiveResultSets=true;"
+//  "ConnectionStrings": {
+//    "SportTracerConnectionString": "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;MultipleActiveResultSets=true;"
 //  }
 //}
 {
@@ -8,4 +8,4 @@
     "SportTracerConnectionString" : "User ID = postgres;Password=martin;Server=localhost;Port=5432;Database=spordipaevik;Integrated Security=True;Pooling=True;"
   }
 }
-//"DefaultConnection": "User ID = postgres;Password=martin;Server=localhost;Port=5432;Database=spordipaevik;Integrated Security=True;Pooling=True;"
+

@@ -20,11 +20,11 @@
     <div class="form-group">
         @{
             var list = new SelectList(Model.Units, "Id", "Name");
-            <select asp-for="Selected" asp-items="list">
+            <select class="form-control"asp-for="Selected" asp-items="list">
                 @* <option value=""> None</option> *@
             </select>
         }
 
     </div>
-    <button type="submit"> Lisa harjutus</button>
+    <button class="btn btn-primary"type="submit"> Lisa harjutus</button>
 </form>

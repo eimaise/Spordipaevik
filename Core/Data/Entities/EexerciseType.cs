@@ -12,8 +12,11 @@ namespace Core.Data.Entities
         {
             
         }
-        public Exercise(int unitId)
+
+        public Exercise(string name, int unitId, string comment="")
         {
+            Name = name;
+            Comment = comment;
             UnitId = unitId;
         }
         public string Name { get; set; }

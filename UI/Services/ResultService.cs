@@ -8,6 +8,8 @@ namespace WebApplication2.Services
     public interface IResultService
     {
         HashSet<DateTime> GetUniqueDates(IEnumerable<Result> results);
+        DateTime GetSmallestDate(IEnumerable<Result> results);
+
     }
 
     public class ResultService : IResultService
@@ -15,6 +17,11 @@ namespace WebApplication2.Services
         public HashSet<DateTime> GetUniqueDates(IEnumerable<Result> results)
         {
             return results.OrderBy(x => x.CreatedOn.Date).Select(x=>x.CreatedOn.Date).Distinct().ToHashSet();
-        } 
+        }
+
+        public DateTime GetSmallestDate(IEnumerable<Result> results)
+        {
+            return results.OrderBy(x => x.CreatedOn).Select(x => x.CreatedOn).FirstOrDefault();
+        }
     }
 }

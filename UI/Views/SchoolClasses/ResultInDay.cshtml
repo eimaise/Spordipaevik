@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var result in Model.OrderByDescending(x=>x.Value))
+    @foreach (var result in Model.OrderByDescending(x=>x.ResultValue.Value))
     {
         <tr>
             
@@ -22,7 +22,7 @@
 
             </td>
             <td>
-                <p>@result.Value</p>
+                <p>@result.ResultValue.Value</p>
 
             </td>
         </tr>

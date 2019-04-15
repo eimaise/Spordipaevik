@@ -1,6 +1,7 @@
-
+using System.Net.WebSockets;
 using Core.Data;
 using Core.Data.Entities;
+using CSharpFunctionalExtensions;
 using Result = CSharpFunctionalExtensions.Result;
 
 namespace Core.AppServices
@@ -32,9 +33,10 @@ namespace Core.AppServices
                     Token = command.Token,
                     Email = command.Email,
                 };
-                _context.Registrations.Add(registration);
-                _context.SaveChanges();
-                return Result.Ok();
+                 _context.Registrations.Add(registration);
+                 _context.SaveChanges();
+                var a = Result.Ok(value:registration.Id);
+                return a;
             }
         }
     }

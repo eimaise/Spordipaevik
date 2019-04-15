@@ -1,4 +1,4 @@
-@model WebApplication2.Controllers.NotRegisteredStudentsListVm
+@model WebApplication2.ViewModels.Students.AdminStudentsListVm
 
 @{
     ViewBag.Title = "title";
@@ -8,6 +8,7 @@
     var tempval = TempData["message"] as string;
 }
 <a class="btn btn-info"asp-action="NotRegisteredStudents">Mitte registreerinud kasutajad</a>
+
 @if (!string.IsNullOrWhiteSpace(tempval))
 {
     <div id="messages" class="alert alert-success alert-dismissible" role="alert">
@@ -30,20 +31,24 @@
             <thead>
             <tr>
                 <th>Email</th>
+                <th>Õpilane</th>
                 <th>Õpilasapileti nr</th>
                 <th>Kutse saadetud</th>
-                <th>Kas on liige</th>
-                <th>Kutse</th>
-                <th>Link Sent</th>
+                <th>Registreerunud</th>
+                <th>Saada kutse</th>
+                <th>Link Sent ( informatiivne )</th>
 
             </tr>
             </thead>
             <tbody>
-            @foreach (var student in Model.NotRegisteredStudents)
+            @foreach (var student in Model.Students)
             {
                 <tr>
                     <td>
-                        <a asp-controller="Student" asp-action="AddStudent" asp-route-id="@student.Id">@student.Email</a>
+                        <p>@student.Email</p>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Student" asp-action="AddStudent" asp-route-id="@student.Id">@student.Name</a>
                     </td>
                     <td>@student.StudentCardNr</td>
                     @if (@student.InviteSent)
@@ -79,7 +84,16 @@
                     <td>
                         <form asp-action="SendRegistrationInvite" method="post">
                             <input class="btn btn-primary" type="hidden" name="studentId" value="@student.Id"/>
-                            <button style="margin-bottom: 10px" type="submit" class="btn btn-primary">Saada kutse</button>
+                            @if (string.IsNullOrEmpty(student.Email))
+                            {
+                                <p style="margin-bottom: 10px">Email puudu</p>
+                                
+                            }
+                            else
+                            {
+                                
+                            <button style="margin-bottom: 10px" type="submit" class="btn btn-primary ">Saada kutse</button>
+                            }
                         </form>
                     </td>
                     @if (!string.IsNullOrWhiteSpace(@student.ActivationLink))

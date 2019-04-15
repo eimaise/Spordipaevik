@@ -12,17 +12,16 @@ namespace Core.Data
     {
         public PeSportsTrackingContext(DbContextOptions<PeSportsTrackingContext> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
-        public DbSet<ApplicationUser> Persons { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<SchoolClass> Classes { get; set; }
         public DbSet<Result> Results { get; set; }
         public DbSet<Unit> Units { get; set; }
+        public DbSet<ApplicationUser> Persons { get; set; }
         
-        public DbSet<Invite> Invites{ get; set; }
+        public DbSet<Invite> Invites{ get;   set; }
         public DbSet<TeacherRegistration> Registrations{ get; set; }
 
 
@@ -53,10 +52,13 @@ namespace Core.Data
         
             modelBuilder.Entity<Invite>()
                 .Property(x => x.Token).IsRequired();
+
             modelBuilder.Entity<Student>()
-                .HasOne(x => x.Invite)
-                .WithOne(x=>x.Student)
-                .HasForeignKey<Invite>(x=>x.StudentId);
+                .HasOne(x => x.Invite);
+            modelBuilder.ApplyConfiguration(new Invite.InviteConfiguration());
+// <Invite>().
+//                .WithOne("Student")
+//                .HasForeignKey<Invite>(x=>x.StudentId);
             modelBuilder.Entity<Student>()
                 .HasMany(x => x.Results)
                 .WithOne(x => x.Student)

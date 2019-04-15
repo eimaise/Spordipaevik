@@ -11,7 +11,9 @@ using Core.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
-using WebApplication2.Data;
+using WebApplication2.Mappers;
+using WebApplication2.Services;
+using WebApplication2.ViewModels.Exercises;
 using WebApplication2.ViewModels.Results;
 using WebApplication2.ViewModels.Students;
 
@@ -20,64 +22,52 @@ namespace WebApplication2.Controllers
     public class StudentController : Controller
     {
         private readonly PeSportsTrackingContext _context;
-        private readonly IChartDataFactory _chartDataFactory;
+        private readonly IChartDataService _chartDataService;
         private readonly Messages _messages;
+        private readonly IStudentMapper _studentMapper;
 
-        public StudentController(PeSportsTrackingContext context, IChartDataFactory chartDataFactory,Messages messages)
+        public StudentController(PeSportsTrackingContext context,
+            IChartDataService chartDataService,
+            Messages messages,
+            IStudentMapper studentMapper)
         {
             _context = context;
-            _chartDataFactory = chartDataFactory;
+            _chartDataService = chartDataService;
             _messages = messages;
+            _studentMapper = studentMapper;
         }
 
         public IActionResult AddStudent(int id)
         {
-            // kas selline klass on olemas
-            var schoolClasses = _context.Classes;
-            var student = _context.Students.Find(id);
-
-            var model = new AddStudentVm();
-            if (student != null)
+            var student = _messages.Dispatch(new GetStudentQuery(id));
+            if (student == null)
             {
-                model.Email = student.Email;
-                model.Name = student.Name;
-                model.Id = student.Id;
-                model.Gender = student.Gender;
-                model.StudentCardNumber = student.StudentCardNumber;
-                model.SchoolClassId = student.SchoolClassId;
+                return new NotFoundResult();
             }
 
+            var schoolClasses = _messages.Dispatch(new GetClassListQuery());
+
+            var model = _studentMapper.ToAdminAddEditStudentVm(student);
             model.SchoolClasses = schoolClasses;
+
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult AddStudent(AddStudentVm model)
+        public IActionResult AddStudent(AdminAddEditStudenVm model)
         {
-            var student = _context.Students.Find(model.Id);
-            if (student == null)
+            if (!ModelState.IsValid)
             {
-                student = new Student();
-                ToStudent(student, model);
-                _context.Students.Add(student);
-            }
-            else
-            {
-                ToStudent(student, model);
-                _context.Students.Update(student);
+                var schoolClasses = _messages.Dispatch(new GetClassListQuery());
+                model.SchoolClasses = schoolClasses;
+                return View(model);
             }
 
-            _context.SaveChanges();
-            return RedirectToAction(nameof(Index), new {name = model.Name});
-        }
-
-        private void ToStudent(Student student, AddStudentVm model)
-        {
-            student.StudentCardNumber = model.StudentCardNumber;
-            student.Gender = model.Gender;
-            student.Email = model.Email;
-            student.Name = model.Name;
-            student.SchoolClassId = model.SchoolClassId;
+            var editStudentCommand = new EditStudentCommand(model.Id, model.Name, model.StudentCardNumber, model.Email,
+                model.Gender, model.SchoolClassId);
+            _messages.Dispatch(editStudentCommand);
+            TempData["studentWasEdited"] = "Õpilase uuendamine õnnestus";
+            return RedirectToAction("AddStudent", new {name = model.Name});
         }
 
         public IActionResult Student(int id)
@@ -88,9 +78,10 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index(string name)
         {
-            var students = _context.Students.Where(x => x.Name.Contains(name));
+            var students = _messages.Dispatch(new GetStudentListQuery(name: name));
             return View(students);
         }
+
         public IActionResult StudentDateResults(DateTime date, int exerciseId, int studentId)
         {
             var excercise = _context.Exercises.FirstOrDefault();
@@ -100,13 +91,15 @@ namespace WebApplication2.Controllers
             return View(allResult);
         }
 
+     
+
         public IActionResult StudentResult(int id)
         {
             var student = _context.Students.FirstOrDefault(x => x.Id == id);
             var excercise = _context.Exercises.FirstOrDefault();
 
             var allResult = _context.Results.Where(x => x.StudentId == id && x.ExerciseId == excercise.Id)
-                .OrderByDescending(x => x.Value);
+                .OrderByDescending(x => x.ResultValue.Value);
             var model = new StudentExerciseVm
             {
                 ExerciseName = excercise.Name,
@@ -119,9 +112,9 @@ namespace WebApplication2.Controllers
                 {
                     model.StudentResults.Add(new StudentResultVm
                     {
-                        Value = result.Value,
+                        Value = result.ResultValue.Value,
                         Date = result.CreatedOn.Date,
-                        ClassName = result.ClassName
+                        ClassName = result.Student.SchoolClass.Name
                     });
                 }
             }
@@ -129,11 +122,11 @@ namespace WebApplication2.Controllers
             return View(model);
         }
 
-        public IActionResult GetData(int studentId,int exerciseId)
+        public IActionResult GetData(int studentId, int exerciseId)
         {
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
-            var results =  _messages.Dispatch(new GetStudentQuery(studentId)).Results;
-            var data = _chartDataFactory.CreateChartDatalist(results.ToList());
+            var results = _messages.Dispatch(new GetStudentQuery(studentId)).Results;
+            var data = _chartDataService.CreateChartDatalist(results.ToList());
             var jsonResult = new
             {
                 dates = data.Dates, exerciseName = exercise.Name, unit = exercise.Unit.Name,

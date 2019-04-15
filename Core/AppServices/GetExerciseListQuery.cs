@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Data;
@@ -7,6 +8,12 @@ namespace Core.AppServices
 {
     public sealed class GetExerciseListQuery : IQuery<List<Exercise>> 
     {
+        public string Name { get; set; }
+
+        public GetExerciseListQuery(string name="")
+        {
+            Name = name;
+        }
         public class GetExerciseListQueryHandler : IQueryHandler<GetExerciseListQuery, List<Exercise>>
         {
             private readonly PeSportsTrackingContext _context;
@@ -16,9 +23,15 @@ namespace Core.AppServices
                 _context = context;
             }
 
-            public List<Exercise> Handle(GetExerciseListQuery query )
+            public List<Exercise> Handle(GetExerciseListQuery query)
             {
-                return _context.Exercises.ToList();
+                if (string.IsNullOrWhiteSpace(query.Name))
+                {
+                    return _context.Exercises.ToList();
+                }
+                return _context.Exercises.Where(x=>x.Name.Contains(query.Name,StringComparison.CurrentCultureIgnoreCase)
+                                                   || x.Comment.Contains(query.Name,StringComparison.CurrentCultureIgnoreCase))
+                    .ToList();
             }
         }
     }

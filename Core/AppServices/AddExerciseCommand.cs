@@ -6,7 +6,7 @@ namespace Core.AppServices
 {
     public sealed class AddExerciseCommand : ICommand
     {
-        public int UnitId{ get; }
+        public int UnitId { get; }
         public string Name { get; set; }
         public string Comment { get; set; }
 
@@ -29,11 +29,7 @@ namespace Core.AppServices
 
             public Result Handle(AddExerciseCommand command)
             {
-                var exercise = new Exercise(command.UnitId)
-                {
-                    Name = command.Name,
-                    Comment= command.Comment,
-                };
+                var exercise = new Exercise( command.Name,command.UnitId, command.Comment);
                 _context.Exercises.Add(exercise);
                 _context.SaveChanges();
                 return Result.Ok();

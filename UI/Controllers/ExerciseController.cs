@@ -5,8 +5,6 @@ using Core.AppServices;
 using Core.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication2.Data;
-using WebApplication2.Data.Repositories;
 using WebApplication2.ViewModels.Exercises;
 
 namespace WebApplication2.Controllers
@@ -46,6 +44,10 @@ namespace WebApplication2.Controllers
 
             }
             var unit =_messages.Dispatch(new GetUnitQuery(model.Selected));
+            if (unit == null)
+            {
+                return new NotFoundResult();
+            }
             _messages.Dispatch(new AddExerciseCommand(unit.Id,model.Name,model.Comment));
             
             return RedirectToAction(nameof(Index));

@@ -1,0 +1,17 @@
+@model WebApplication2.Controllers.UserInfoVm
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form method="post">
+    <div class="form-group">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <label> Uus parool</label>
+        <input asp-for="Password" class="form-control"/>
+        <label> Korda parooli</label>
+        <input asp-for="ConfirmPassword" class="form-control"/>
+        <button class="btn btn-success" type="submit">Muuda</button>
+    </div>
+</form>

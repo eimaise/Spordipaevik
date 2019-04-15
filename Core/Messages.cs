@@ -3,16 +3,26 @@ using CSharpFunctionalExtensions;
 
 namespace Core
 {
-    public sealed class Messages
+//    public interface IMessages
+//    {
+//        T Dispatch<T>(IQuery<T> query);
+//        Result Dispatch(ICommand command);
+//    }
+// 
+    public class Messages 
     {
         private readonly IServiceProvider _provider;
 
+        protected Messages()
+        {
+            
+        }
         public Messages(IServiceProvider provider)
         {
             _provider = provider;
         }
 
-        public Result Dispatch(ICommand command)
+        public virtual Result Dispatch(ICommand command)
         {
             Type type = typeof(ICommandHandler<>);
             Type[] typeArgs = { command.GetType() };
@@ -24,7 +34,7 @@ namespace Core
             return result;
         }
 
-        public T Dispatch<T>(IQuery<T> query)
+        public virtual T Dispatch<T>(IQuery<T> query)
         {
             Type type = typeof(IQueryHandler<,>);
             Type[] typeArgs = { query.GetType(), typeof(T) };

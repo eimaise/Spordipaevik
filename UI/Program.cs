@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Core.Data;
+﻿using Core.Data;
+using Core.Data.Seeder;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using WebApplication2.Data;
 
 namespace WebApplication2
 {
@@ -17,7 +11,8 @@ namespace WebApplication2
     {
         public static void Main(string[] args)
         {
-           var host =  CreateWebHostBuilder(args).Build();
+           var host =  CreateWebHostBuilder(args)
+               .UseApplicationInsights().Build();
             SeedDb(host);
             host.Run();
         }

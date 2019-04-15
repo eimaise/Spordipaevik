@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,7 @@ namespace Core.AppServices
     {
         public string Role { get;}
 
-        public GetAppUserListQuery(string role ="")
+        public GetAppUserListQuery(string role = "")
         {
             Role = role;
         }
@@ -30,9 +32,7 @@ namespace Core.AppServices
                     return _userManager.Users.ToList();
                 }
 
-                return _userManager.Users.Include(x => x.UserRoles)
-                    .ThenInclude(x => x.Role)
-                    .Where(x => x.UserRoles.Any(c => c.Role.Name == query.Role)).ToList();
+               return  _userManager.Users.Where(x => _userManager.IsInRoleAsync(x, "Teacher").Result).ToList();
             }
         }
     }
