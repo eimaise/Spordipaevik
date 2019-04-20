@@ -19,17 +19,17 @@ namespace Tests.AppServices
             _sut = new GetAppUserListQuery();
             
         }
-
-        [Test]
-        public void METHOD()
-        {
-            var context = new PeSportsTrackingContext(new DbContextOptions<PeSportsTrackingContext>());
-            context.Students = new DbSet<Student>();
-            var getStudentQueryHandler = new GetStudentQuery.GetStudentQueryHandler();
-            var _sutt = getStudentQueryHandler;
-            // Act
-            _sut.
-            // Assert
-        }
+//
+//        [Test]
+//        public void METHOD()
+//        {
+//            var context = new PeSportsTrackingContext(new DbContextOptions<PeSportsTrackingContext>());
+//            context.Students = new DbSet<Student>();
+//            var getStudentQueryHandler = new GetStudentQuery.GetStudentQueryHandler();
+//            var _sutt = getStudentQueryHandler;
+//            // Act
+//            _sut.
+//            // Assert
+//        }
     }
 }

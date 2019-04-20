@@ -151,8 +151,8 @@ namespace WebApplication2
                     .AddTransient<ICommandHandler<AddExerciseCommand>,
                         AddExerciseCommand.AddExerciseCommandHandler>();
                 services
-                    .AddTransient<ICommandHandler<EditStudentCommand>,
-                        EditStudentCommand.EditStudentCommandHandler>();
+                    .AddTransient<ICommandHandler<EditAddStudentCommand>,
+                        EditAddStudentCommand.EditAddStudentCommandHandler>();
                 services
                     .AddTransient<IQueryHandler<GetResultQuery, Result>,
                         GetResultQuery.GetResultQueryHandler>();
@@ -165,6 +165,9 @@ namespace WebApplication2
                 services
                     .AddTransient<IQueryHandler<GetStudentWithStudentCardNoQuery, Student>,
                         GetStudentWithStudentCardNoQuery.GetStudentWithStudentCardNoQueryHandler>();
+                services
+                    .AddTransient<ICommandHandler<ChangeClassNumberCommand>,
+                        ChangeClassNumberCommand.ChangeClassNumberCommandHandler>();
             }
         }
 
@@ -181,6 +184,18 @@ namespace WebApplication2
                 app.UseHsts();
             }
 
+//            app.Use(async (ctx, next) =>
+//            {
+//                if (ctx.Request.Path == "/mida-iganes")
+//                                 {
+//                    await ctx.Response.WriteAsync("okei.");
+//                }
+//                else
+//                {
+//                    await next();
+//                }
+//            });
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

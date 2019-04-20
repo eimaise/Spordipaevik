@@ -57,6 +57,7 @@ namespace WebApplication2.Controllers
             {
                 return new NotFoundResult();
             }
+
             var studentInviteCommand = new StudentInviteCommand(_secureTokenGenerator.Generate(20), student);
             _messages.Dispatch(studentInviteCommand);
             TempData["message"] = "Registration invite successfully sent";
@@ -67,9 +68,28 @@ namespace WebApplication2.Controllers
         public IActionResult FindStudent(string name)
         {
             var students = _messages.Dispatch(new GetStudentListQuery(name: name));
-           
+
             var model = _studentMapper.ToStudentsListVm(students);
             return View("Index", model);
+        }
+
+        public IActionResult AdminSettings()
+        {
+            return View();
+        }
+
+//        public IActionResult AdminSettings()
+//        {
+//           
+//            var model = _studentMapper.ToStudentsListVm(students);
+//            return View("Index", model);
+//        }
+        [HttpPost]
+        public IActionResult ChangeClassNumbers()
+        {
+            _messages.Dispatch(new ChangeClassNumberCommand());
+
+            return RedirectToAction("AdminSettings");
         }
     }
 }

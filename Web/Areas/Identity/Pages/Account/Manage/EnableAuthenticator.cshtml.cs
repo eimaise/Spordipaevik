@@ -149,7 +149,7 @@ namespace WebApplication2.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("UI"),
+                _urlEncoder.Encode("Web"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

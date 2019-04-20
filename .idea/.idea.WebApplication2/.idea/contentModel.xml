@@ -11,8 +11,9 @@
         <e p="AppServices" t="Include">
           <e p="AddExerciseCommand.cs" t="Include" />
           <e p="AddUnitCommand.cs" t="Include" />
+          <e p="ChangeClassNumberCommand.cs" t="Include" />
+          <e p="EditAddStudentCommand.cs" t="Include" />
           <e p="EditResultCommand.cs" t="Include" />
-          <e p="EditStudentCommand.cs" t="Include" />
           <e p="GetAppUserListQuery.cs" t="Include" />
           <e p="GetClassListQuery.cs" t="Include" />
           <e p="GetClassQuery.cs" t="Include" />
@@ -59,7 +60,6 @@
             </e>
           </e>
         </e>
-        <e p="Startup.cs" t="Include" />
         <e p="ValueObject.cs" t="Include" />
       </e>
       <e p="Infrastructure" t="IncludeRecursive">
@@ -78,53 +78,16 @@
       <e p="Tests" t="IncludeRecursive">
         <e p="AdminControllerTests.cs" t="Include" />
         <e p="AppServices" t="Include">
+          <e p="AddExerciseCommandTests.cs" t="Include" />
+          <e p="AddunitCommandTests.cs" t="Include" />
+          <e p="EditAddStudentCommandTests.cs" t="Include" />
+          <e p="EditStudentCommandTests.cs" t="Include" />
           <e p="GetAppUserListQueryTests.cs" t="Include" />
+          <e p="HomeControllerTests.cs" t="Include" />
+          <e p="UserRegisteredCommandTests.cs" t="Include" />
         </e>
         <e p="Bin" t="ExcludeRecursive" />
         <e p="ChartDataServiceTests.cs" t="Include" />
-        <e p="IntegrationTests" t="Include">
-          <e p="Bin" t="Include">
-            <e p="Debug" t="Include">
-              <e p="netcoreapp2.2" t="Include">
-                <e p="Core.dll" t="Include" />
-                <e p="Core.pdb" t="Include" />
-                <e p="IntegrationTests.deps.json" t="Include" />
-                <e p="IntegrationTests.dll" t="Include" />
-                <e p="IntegrationTests.pdb" t="Include" />
-                <e p="IntegrationTests.runtimeconfig.dev.json" t="Include" />
-                <e p="IntegrationTests.runtimeconfig.json" t="Include" />
-                <e p="UI.dll" t="Include" />
-                <e p="UI.pdb" t="Include" />
-                <e p="UI.Views.dll" t="Include" />
-                <e p="UI.Views.pdb" t="Include" />
-                <e p="xunit.runner.reporters.netcoreapp10.dll" t="Include" />
-                <e p="xunit.runner.utility.netcoreapp10.dll" t="Include" />
-                <e p="xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="obj" t="Include">
-            <e p="Debug" t="Include">
-              <e p="netcoreapp2.2" t="Include">
-                <e p="IntegrationTests.AssemblyInfo.cs" t="Include" />
-                <e p="IntegrationTests.AssemblyInfoInputs.cache" t="Include" />
-                <e p="IntegrationTests.assets.cache" t="Include" />
-                <e p="IntegrationTests.csproj.CopyComplete" t="Include" />
-                <e p="IntegrationTests.csproj.CoreCompileInputs.cache" t="Include" />
-                <e p="IntegrationTests.csproj.FileListAbsolute.txt" t="Include" />
-                <e p="IntegrationTests.csprojAssemblyReference.cache" t="Include" />
-                <e p="IntegrationTests.dll" t="Include" />
-                <e p="IntegrationTests.pdb" t="Include" />
-              </e>
-            </e>
-            <e p="IntegrationTests.csproj.nuget.cache" t="Include" />
-            <e p="IntegrationTests.csproj.nuget.g.props" t="Include" />
-            <e p="IntegrationTests.csproj.nuget.g.targets" t="Include" />
-            <e p="project.assets.json" t="Include" />
-            <e p="project.packagespec.json" t="Include" />
-          </e>
-          <e p="UnitTest1.cs" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -133,11 +96,12 @@
             </e>
           </e>
         </e>
+        <e p="SecureTokenGeneratorTests.cs" t="Include" />
         <e p="StudentMapperTests.cs" t="Include" />
         <e p="TeacherMapperTests.cs" t="Include" />
         <e p="Tests.csproj" t="IncludeRecursive" />
       </e>
-      <e p="UI" t="IncludeRecursive">
+      <e p="Web" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Areas" t="Include">
@@ -229,7 +193,7 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="UI.AssemblyInfo.cs" t="Include" />
+              <e p="Web.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -244,7 +208,6 @@
           <e p="ResultService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="UI.csproj" t="IncludeRecursive" />
         <e p="ViewModels" t="Include">
           <e p="Exercises" t="Include">
             <e p="AddExerciseVv.cs" t="Include" />
@@ -272,6 +235,7 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Admin" t="Include">
+            <e p="AdminSettings.cshtml" t="Include" />
             <e p="EditStudent.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
@@ -332,6 +296,7 @@
           </e>
         </e>
         <e p="Web.config" t="Include" />
+        <e p="Web.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="site.css" t="Include" />

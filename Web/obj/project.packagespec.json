@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\UI\\UI.csproj",
-    "projectName": "UI",
-    "projectPath": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\UI\\UI.csproj",
-    "outputPath": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\UI\\obj\\",
+    "projectUniqueName": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\Web\\Web.csproj",
+    "projectName": "Web",
+    "projectPath": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\Web\\Web.csproj",
+    "outputPath": "C:\\Users\\MartinSaar\\RiderProjects\\WebApplication2\\Web\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

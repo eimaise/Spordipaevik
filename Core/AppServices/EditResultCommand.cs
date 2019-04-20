@@ -13,7 +13,6 @@ namespace Core.AppServices
             Id = id;
             ResultValue = resultValue;
         }
-     
 
         public class EditResultCommandHandler : ICommandHandler<EditResultCommand>
         {

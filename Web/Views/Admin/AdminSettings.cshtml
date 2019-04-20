@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+    
+<div class="row ">
+    <div class="col">
+        Seadista perdioode
+    </div>
+    <div class="col">
+        <button class="btn btn-success">Perdioodid</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        Uuenda uue õppeaasta klassinumbreid
+    </div>
+    <div class="col">
+        <form method="post">
+            <button asp-action="ChangeClassNumbers"class="btn btn-success">Uuenda</button>
+        </form>
+    </div>
+</div>

@@ -63,7 +63,7 @@ namespace WebApplication2.Controllers
                 return View(model);
             }
 
-            var editStudentCommand = new EditStudentCommand(model.Id, model.Name, model.StudentCardNumber, model.Email,
+            var editStudentCommand = new EditAddStudentCommand(model.Id, model.Name, model.StudentCardNumber, model.Email,
                 model.Gender, model.SchoolClassId);
             _messages.Dispatch(editStudentCommand);
             TempData["studentWasEdited"] = "Õpilase uuendamine õnnestus";

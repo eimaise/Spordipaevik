@@ -4,7 +4,7 @@ using Result = CSharpFunctionalExtensions.Result;
 
 namespace Core.AppServices
 {
-    public class EditStudentCommand : ICommand
+    public class EditAddStudentCommand : ICommand
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,8 +13,12 @@ namespace Core.AppServices
         public Gender Gender { get; set; }
         public int SchoolClassId { get; set; }
 
+        public EditAddStudentCommand()
+        {
+            
+        }
 
-        public EditStudentCommand(int id, string name, string studentCardNumber, string email, Gender gender, int schoolClassId)
+        public EditAddStudentCommand(int id, string name, string studentCardNumber, string email, Gender gender, int schoolClassId)
         {
             Id = id;
             Name = name;
@@ -24,22 +28,24 @@ namespace Core.AppServices
             SchoolClassId = schoolClassId;
         }
 
-        public class EditStudentCommandHandler : ICommandHandler<EditStudentCommand>
+        public class EditAddStudentCommandHandler : ICommandHandler<EditAddStudentCommand>
         {
             private readonly PeSportsTrackingContext _context;
 
-            public EditStudentCommandHandler(PeSportsTrackingContext context)
+            public EditAddStudentCommandHandler(PeSportsTrackingContext context)
             {
                 _context = context;
             }
 
-            public Result Handle(EditStudentCommand command)
+            public Result Handle(EditAddStudentCommand command)
             {
                 var student = _context.Students.Find(command.Id);
                 if (student == null)
                 {
                     student = new Student();
                     _context.Students.Add(student);
+                    _context.SaveChanges();
+
                 }
                 student.StudentCardNumber = command.StudentCardNumber;
                 student.Gender = command.Gender;

@@ -22,7 +22,7 @@ namespace Tests
         }
 
         [Test]
-        public void CreateChartDatalist_returns_ChartDataList()
+        public void CreateChartDatalist_returns_Empty_ChartDataList_When_Results_Have_No_Uniqu_Dates()
         {
             var results = new List<Result>();
             _resultServiceMock.Setup(x => x.GetUniqueDates(results)).Returns(new List<DateTime>().ToHashSet());

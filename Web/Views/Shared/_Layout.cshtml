@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - UI</title>
+    <title>@ViewData["Title"] - Web</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
@@ -59,6 +59,9 @@
             <ul class="navbar-nav ml-auto">
                 @if (User.IsInRole("Admin"))
                 {
+                    <li class="nav-item ">
+                        <a class="nav-link" asp-controller="Admin" asp-action="AdminSettings">Kooli seaded</a>
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link" asp-controller="Admin" asp-action="Index">Õpilaste haldamine</a>
                     </li>

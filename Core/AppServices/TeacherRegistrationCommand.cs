@@ -35,8 +35,7 @@ namespace Core.AppServices
                 };
                  _context.Registrations.Add(registration);
                  _context.SaveChanges();
-                var a = Result.Ok(value:registration.Id);
-                return a;
+                return Result.Ok(value:registration.Id);
             }
         }
     }
