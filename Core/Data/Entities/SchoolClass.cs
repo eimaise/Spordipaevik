@@ -8,7 +8,7 @@ namespace Core.Data.Entities
         public string Name { get; set; }
         public DateTime CreatedOn { get; set; }
         private ICollection<Student> _students;
-        public bool IsClosed { get; set; }
+        public bool IsFinished { get; set; }
 
         public virtual ICollection<Student> Students
         {

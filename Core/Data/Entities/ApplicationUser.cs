@@ -7,17 +7,18 @@ namespace Core.Data.Entities
     {
         public ApplicationUser() : base(){}
         public string Name { get; set; }
-        public virtual ICollection<ApplicationUserRole> UserRoles { get; set; }
+        public bool HideResults { get; set; }
+//        public virtual ICollection<IdentityRole> UserRoles { get; set; }
     }
-    public class ApplicationUserRole  : IdentityUserRole<string>
-    {
-        public virtual ApplicationUser User { get; set; }
-        public virtual ApplicationRole Role { get; set; }
-    }
-    public class ApplicationRole : IdentityRole
-    {
-        public virtual  ICollection<ApplicationUserRole> UserRoles { get; set; }
-    }
+//    public class ApplicationUserRole  : IdentityUserRole<string>
+//    {
+////        public virtual ApplicationUser User { get; set; }
+////        public virtual ApplicationRole Role { get; set; }
+//    }
+//    public class ApplicationRole : IdentityRole
+//    {
+//        public virtual  ICollection<ApplicationUserRole> UserRoles { get; set; }
+//    }
 
     public static class Role
     {

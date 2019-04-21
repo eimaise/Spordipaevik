@@ -17,13 +17,13 @@ namespace Core.AppServices
 
             public Result Handle(ChangeClassNumberCommand command)
             {
-                var classes = _context.Classes.Where(x => !x.IsClosed);
+                var classes = _context.Classes.Where(x => !x.IsFinished);
                 foreach (var schoolClass in classes)
                 {
                     var classNumber = Helpers.GetClassNumberFromClassName(schoolClass.Name);
                     if (classNumber == 12)
                     {
-                        schoolClass.IsClosed = true;
+                        schoolClass.IsFinished = true;
                     }
                     else
                     {

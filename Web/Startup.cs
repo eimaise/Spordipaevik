@@ -62,7 +62,7 @@ namespace WebApplication2
             CoreCommandAndQueryServicesShouldBeMoved();
 
 
-            services.AddIdentity<ApplicationUser, ApplicationRole>(
+            services.AddIdentity<ApplicationUser, IdentityRole>(
                     options =>
                     {
                         options.Stores.MaxLengthForKeys = 128;
@@ -168,6 +168,11 @@ namespace WebApplication2
                 services
                     .AddTransient<ICommandHandler<ChangeClassNumberCommand>,
                         ChangeClassNumberCommand.ChangeClassNumberCommandHandler>();
+                services.AddTransient<ICommandHandler<EditAppUserCommand>,
+                    EditAppUserCommand.AddUnitCommandHandler>();
+                services
+                    .AddTransient<IQueryHandler<GetStudentByStudentCardNrQuery, Student>,
+                        GetStudentByStudentCardNrQuery.GetStudentByStudentCardNrQueryHandler>();
             }
         }
 

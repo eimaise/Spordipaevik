@@ -6,7 +6,6 @@ using Core.Data.Entities;
 
 namespace Core.AppServices
 {
-    //todo : sellele oleks kena testid ka 
     public sealed class GetStudentsResultsInExerciseQuery : IQuery<List<Result>> 
     {
         public List<int> StudentIds{ get; set; }

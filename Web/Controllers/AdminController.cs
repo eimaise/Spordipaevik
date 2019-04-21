@@ -78,12 +78,7 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-//        public IActionResult AdminSettings()
-//        {
-//           
-//            var model = _studentMapper.ToStudentsListVm(students);
-//            return View("Index", model);
-//        }
+
         [HttpPost]
         public IActionResult ChangeClassNumbers()
         {

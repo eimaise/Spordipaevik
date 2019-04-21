@@ -9,7 +9,7 @@ using WebApplication2.ViewModels.Exercises;
 
 namespace WebApplication2.Controllers
 {
-//    [Authorize(Roles = "Teacher")]
+    [Authorize(Roles = "Teacher")]
     public class ExerciseController : Controller
     {
         private readonly Messages _messages;

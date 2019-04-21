@@ -75,6 +75,8 @@ namespace WebApplication2.Controllers
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
             var students = _messages.Dispatch(new GetClassQuery(classId)).Students;
             var results = _messages.Dispatch(new GetStudentsResultsInExerciseQuery(students.Select(x => x.Id).ToList(),exercise.Id,dateTime));
+            var isCurrentUserTeacher = User.IsInRole(Role.Teacher);
+                
             var cData = _chartDataService.CreateChartDatalist(results);
 
             var names = cData.ChartData.Select(x => x.Name);

@@ -1,4 +1,4 @@
-@model WebApplication2.Controllers.UserInfoVm
+@model WebApplication2.ViewModels.User.UserInfoVm
 
 @{
     ViewBag.Title = "title";
@@ -12,6 +12,22 @@
         <input asp-for="Password" class="form-control"/>
         <label> Korda parooli</label>
         <input asp-for="ConfirmPassword" class="form-control"/>
-        <button class="btn btn-success" type="submit">Muuda</button>
+        <button class="btn btn-success" type="submit">Salvesta uus parool</button>
     </div>
 </form>
+@if (@Model.IsStudent)
+{
+    if (@Model.IsResultsHidden)
+    {
+        <p>Sinu tulemused on varjatud</p>
+    }
+    else
+    {
+        <p>Sinu tulemused on kõigile näha</p>
+
+    }
+    <form asp-action="ChangeResultStatus" method="post">
+        <button class="btn btn-success" type="submit">Muuda</button>
+    </form>
+}
+    

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Core.Data;
 using Core.Data.Entities;
@@ -29,28 +30,29 @@ namespace Core.AppServices
             }
         }
     }
-    public sealed class GetStudentWithStudentCardNoQuery : IQuery<Student> 
+    public sealed class GetStudentByStudentCardNrQuery : IQuery<Student> 
     {
-        public GetStudentWithStudentCardNoQuery(string studentCardNumber)
+        public GetStudentByStudentCardNrQuery(string studentCardnr)
         {
-            StudentCardNumber = studentCardNumber;
+            StudentCardnr = studentCardnr;
         }
+        public string StudentCardnr { get; }
 
-        public string StudentCardNumber { get; }
 
-
-        public class GetStudentWithStudentCardNoQueryHandler : IQueryHandler<GetStudentWithStudentCardNoQuery, Student>
+        public class GetStudentByStudentCardNrQueryHandler : IQueryHandler<GetStudentByStudentCardNrQuery, Student>
         {
             private readonly PeSportsTrackingContext _context;
 
-            public GetStudentWithStudentCardNoQueryHandler(PeSportsTrackingContext context)
+            public GetStudentByStudentCardNrQueryHandler(PeSportsTrackingContext context)
             {
                 _context = context;
             }
 
-            public Student Handle(GetStudentWithStudentCardNoQuery query)
+            public Student Handle(GetStudentByStudentCardNrQuery query)
             {
-                return _context.Students.FirstOrDefault(x => x.StudentCardNumber == query.StudentCardNumber);
+                var st = _context.Students.ToList();
+                
+                return _context.Students.FirstOrDefault(x=>x.StudentCardNumber.Equals(query.StudentCardnr,StringComparison.InvariantCultureIgnoreCase));
             }
         }
     }

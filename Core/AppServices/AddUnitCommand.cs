@@ -26,4 +26,34 @@ namespace Core.AppServices
             }
         }
     }
+    public sealed class EditAppUserCommand : ICommand
+    {
+        public bool HideResults{ get; set; }
+        public ApplicationUser User{ get; set; }
+
+        public EditAppUserCommand(bool hideResults, ApplicationUser user)
+        {
+            HideResults = hideResults;
+            User = user;
+        }
+
+        public class AddUnitCommandHandler : ICommandHandler<EditAppUserCommand>
+        {
+            private readonly PeSportsTrackingContext _context;
+
+            public AddUnitCommandHandler(PeSportsTrackingContext context)
+            {
+                _context = context;
+            }
+
+            public Result Handle(EditAppUserCommand command)
+            {
+                var user = command.User;
+                command.User.HideResults = command.HideResults;
+                _context.Persons.Update(user);
+                _context.SaveChanges();
+                return Result.Ok();
+            }
+        }
+    }
 }

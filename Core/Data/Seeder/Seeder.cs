@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
 
 namespace Core.Data.Seeder
 {
@@ -13,12 +15,12 @@ namespace Core.Data.Seeder
         private readonly PeSportsTrackingContext _ctx;
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
 
         public Seeder(PeSportsTrackingContext ctx, IHostingEnvironment hostingEnvironment,
             UserManager<ApplicationUser> userManager,
-            RoleManager<ApplicationRole> roleManager)
+            RoleManager<IdentityRole> roleManager)
         {
             _ctx = ctx;
             _hostingEnvironment = hostingEnvironment;
@@ -68,11 +70,10 @@ namespace Core.Data.Seeder
 
             if (!_ctx.Persons.Any())
             {
-                // create sample data
-//                var filepath = Path.Combine(_hostingEnvironment.ContentRootPath, "Data/smt.json");
-//                var json = File.ReadAllText(filepath);
+//                 create sample data
+                var filepath = Path.Combine(_hostingEnvironment.ContentRootPath, "Data/smt.json");
+                var json = File.ReadAllText(filepath);
 //                var persons = JsonConvert.DeserializeObject<IEnumerable<ApplicationUser>>(json);
-//                _ctx.Persons.AddRange(persons);
                 _ctx.SaveChanges();
             }
         }
@@ -85,7 +86,7 @@ namespace Core.Data.Seeder
                 bool adminRoleExits = await _roleManager.RoleExistsAsync("Admin");
                 if (!adminRoleExits)
                 {
-                    var role = new ApplicationRole();
+                    var role = new IdentityRole();
                     role.Name = "Admin";
                     await _roleManager.CreateAsync(role);
                 }
@@ -93,7 +94,7 @@ namespace Core.Data.Seeder
                 bool teacherRoleExits = await _roleManager.RoleExistsAsync("Teacher");
                 if (!teacherRoleExits)
                 {
-                    var role = new ApplicationRole();
+                    var role = new IdentityRole();
                     role.Name = "Teacher";
                     await _roleManager.CreateAsync(role);
                 }
@@ -101,7 +102,7 @@ namespace Core.Data.Seeder
                 bool studentRoleExists = await _roleManager.RoleExistsAsync("Student");
                 if (!studentRoleExists)
                 {
-                    var role = new ApplicationRole();
+                    var role = new IdentityRole();
                     role.Name = "Student";
                     await _roleManager.CreateAsync(role);
                 }
@@ -160,7 +161,7 @@ namespace Core.Data.Seeder
 
         private void AddResultToStudent(Student student, Exercise exercise, int years)
         {
-            Random random = new Random();
+            var random = new Random();
             var exractTime = 6;
             for (int i = years * 2; i > 0; i--)
             {
@@ -325,7 +326,14 @@ namespace Core.Data.Seeder
             {
                 students.AddRange(CreateClassStudents(schoolClass.Name, schoolClass.Id));
             }
-
+            //applicationstudet test user 
+            students.Add( new Student
+            {
+                Name = $"Testkasutaja student ",
+                StudentCardNumber = "Student",
+                SchoolClassId = 22,
+                Gender = Gender.Man
+            });
             _ctx.Students.AddRange(students);
 
             string GenerateRandomStudentCardNumber(Random random)

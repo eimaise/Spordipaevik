@@ -10,15 +10,17 @@ namespace Core.AppServices
         public string Name { get; set; }
         public string StudentCardNumber { get; set; }
         public string Email { get; set; }
-        public Gender Gender { get; set; }
-        public int SchoolClassId { get; set; }
+        public Gender? Gender { get; set; }
+        public int? SchoolClassId { get; set; }
+        public bool? ShouldResultsBeHidden { get; set; }
+
 
         public EditAddStudentCommand()
         {
-            
         }
 
-        public EditAddStudentCommand(int id, string name, string studentCardNumber, string email, Gender gender, int schoolClassId)
+        public EditAddStudentCommand(int id, string name, string studentCardNumber, string email, Gender? gender,
+            int schoolClassId)
         {
             Id = id;
             Name = name;
@@ -45,13 +47,38 @@ namespace Core.AppServices
                     student = new Student();
                     _context.Students.Add(student);
                     _context.SaveChanges();
-
                 }
-                student.StudentCardNumber = command.StudentCardNumber;
-                student.Gender = command.Gender;
-                student.Email = command.Email;
-                student.Name = command.Name;
-                student.SchoolClassId = command.SchoolClassId;
+
+                if (!string.IsNullOrWhiteSpace(command.StudentCardNumber))
+                {
+                    student.StudentCardNumber = command.StudentCardNumber;
+                }
+
+                if (command.Gender.HasValue)
+                {
+                    student.Gender = command.Gender.Value;
+                }
+
+                if (!string.IsNullOrWhiteSpace(command.Email))
+                {
+                    student.Email = command.Email;
+                }
+
+                if (!string.IsNullOrWhiteSpace(command.Name))
+                {
+                    student.Name = command.Name;
+                }
+
+                if (command.SchoolClassId.HasValue)
+                {
+                    student.SchoolClassId = command.SchoolClassId.Value;
+                }
+
+                if (command.ShouldResultsBeHidden.HasValue)
+                {
+                    student.HiddenResults = command.ShouldResultsBeHidden.Value;
+                }
+
                 _context.Students.Update(student);
                 _context.SaveChanges();
                 return Result.Ok();

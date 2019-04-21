@@ -2,6 +2,7 @@ using System.Linq;
 using Core;
 using Core.AppServices;
 using Core.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Mappers;
@@ -26,7 +27,7 @@ namespace WebApplication2.Controllers
             _teacherMapper = teacherMapper;
             _userManager = userManager;
         }
-        
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult AddTeacher(AddTeacherVm model)
         {
@@ -37,10 +38,14 @@ namespace WebApplication2.Controllers
             _messages.Dispatch(new TeacherRegistrationCommand(_secureTokenGenerator.Generate(20), model.Email));
             return RedirectToAction("Teachers");
         }
+        
+        [Authorize(Roles = "Admin")]
         public IActionResult AddTeacher()
         {
             return View();
         }
+        
+        [Authorize(Roles = "Admin")]
         public IActionResult Teachers()
         {
             var teachers = _messages.Dispatch(new GetAppUserListQuery("Teacher"));

@@ -16,6 +16,7 @@ namespace Core.Data.Entities
         public bool RegisteredInSystem { get; private set; }
         public virtual Invite Invite { get; set; }
         public int? InviteId { get; set; }
+        public bool HiddenResults { get; set; }
         
         //TODO: oleks vaja privateiks muuta, 
         public virtual ICollection<Result> Results { get; set; }

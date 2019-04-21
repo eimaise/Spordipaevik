@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Xml.Linq;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -31,8 +32,7 @@ namespace Core.AppServices
                 {
                     return _userManager.Users.ToList();
                 }
-
-               return  _userManager.Users.Where(x => _userManager.IsInRoleAsync(x, "Teacher").Result).ToList();
+                return _userManager.Users.ToList().Where(x=>_userManager.IsInRoleAsync(x,query.Role).Result).ToList();
             }
         }
     }

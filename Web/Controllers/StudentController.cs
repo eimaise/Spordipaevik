@@ -8,6 +8,7 @@ using Core;
 using Core.AppServices;
 using Core.Data;
 using Core.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
@@ -36,7 +37,7 @@ namespace WebApplication2.Controllers
             _messages = messages;
             _studentMapper = studentMapper;
         }
-
+        [Authorize(Roles = "Teacher,Admin")]
         public IActionResult AddStudent(int id)
         {
             var student = _messages.Dispatch(new GetStudentQuery(id));
@@ -52,6 +53,7 @@ namespace WebApplication2.Controllers
 
             return View(model);
         }
+        [Authorize(Roles = "Teacher,Admin")]
 
         [HttpPost]
         public IActionResult AddStudent(AdminAddEditStudenVm model)
@@ -90,7 +92,6 @@ namespace WebApplication2.Controllers
 
             return View(allResult);
         }
-
      
 
         public IActionResult StudentResult(int id)
@@ -125,7 +126,8 @@ namespace WebApplication2.Controllers
         public IActionResult GetData(int studentId, int exerciseId)
         {
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
-            var results = _messages.Dispatch(new GetStudentQuery(studentId)).Results;
+//            var results = _messages.Dispatch(new GetStudentQuery(studentId)).Results.Where(x=>x.ExerciseId==exercise.Id);
+            var results = _messages.Dispatch(new GetStudentsResultsInExerciseQuery(new[]{studentId}.ToList(),exercise.Id));
             var data = _chartDataService.CreateChartDatalist(results.ToList());
             var jsonResult = new
             {
