@@ -11,15 +11,13 @@ namespace WebApplication2.Controllers
 {
     public class RegistrationController : Controller
     {
-        private readonly PeSportsTrackingContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly Messages _messages;
 
-        public RegistrationController(PeSportsTrackingContext context, UserManager<ApplicationUser> userManager,
+        public RegistrationController(UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager, Messages messages)
         {
-            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _messages = messages;

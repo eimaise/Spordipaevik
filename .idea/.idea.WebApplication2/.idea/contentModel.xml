@@ -89,6 +89,7 @@
         </e>
         <e p="Bin" t="ExcludeRecursive" />
         <e p="ChartDataServiceTests.cs" t="Include" />
+        <e p="ExerciseControllerTests.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -97,6 +98,7 @@
             </e>
           </e>
         </e>
+        <e p="RegistrationControllerTests.cs" t="Include" />
         <e p="SecureTokenGeneratorTests.cs" t="Include" />
         <e p="StudentMapperTests.cs" t="Include" />
         <e p="TeacherMapperTests.cs" t="Include" />

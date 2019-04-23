@@ -74,8 +74,8 @@ namespace WebApplication2.Controllers
 
         public IActionResult Student(int id)
         {
-            var students = _context.Students.FirstOrDefault(x => x.Id == id);
-            return View(students);
+            var student = _messages.Dispatch(new GetStudentQuery(id));
+            return View(student);
         }
 
         public IActionResult Index(string name)
@@ -86,7 +86,8 @@ namespace WebApplication2.Controllers
 
         public IActionResult StudentDateResults(DateTime date, int exerciseId, int studentId)
         {
-            var excercise = _context.Exercises.FirstOrDefault();
+            var excercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
+
             var allResult = _context.Results.Where(x =>
                 x.StudentId == studentId && x.ExerciseId == excercise.Id && x.CreatedOn.Date == date);
 
@@ -96,7 +97,7 @@ namespace WebApplication2.Controllers
 
         public IActionResult StudentResult(int id)
         {
-            var student = _context.Students.FirstOrDefault(x => x.Id == id);
+            var student = _messages.Dispatch(new GetStudentQuery(id));
             var excercise = _context.Exercises.FirstOrDefault();
 
             var allResult = _context.Results.Where(x => x.StudentId == id && x.ExerciseId == excercise.Id)
@@ -126,7 +127,6 @@ namespace WebApplication2.Controllers
         public IActionResult GetData(int studentId, int exerciseId)
         {
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
-//            var results = _messages.Dispatch(new GetStudentQuery(studentId)).Results.Where(x=>x.ExerciseId==exercise.Id);
             var results = _messages.Dispatch(new GetStudentsResultsInExerciseQuery(new[]{studentId}.ToList(),exercise.Id));
             var data = _chartDataService.CreateChartDatalist(results.ToList());
             var jsonResult = new
