@@ -7,6 +7,7 @@ using Core.Data;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Services;
+using WebApplication2.ViewModels;
 using WebApplication2.ViewModels.Exercises;
 using WebApplication2.ViewModels.Results;
 
@@ -29,7 +30,6 @@ namespace WebApplication2.Controllers
         }
         public IActionResult List(string name)
         {
-            
             var exercises = _messages.Dispatch(new GetExerciseListQuery(name));
             var classes = _messages.Dispatch(new GetClassListQuery());
             var model = new ExerciseListVm();
@@ -50,14 +50,14 @@ namespace WebApplication2.Controllers
             return View(model);
         }
 
-        public IActionResult ClassResults(int exerciseId, int classId)
+        public IActionResult ClassResults(int exerciseId, int classId,int gender)
         {
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
             if (exercise == null)
             {
                 return new NotFoundResult();
             }
-            var students = _messages.Dispatch(new GetClassQuery(classId)).Students;
+            var students = _messages.Dispatch(new GetClassQuery(classId)).Students.Where(x=>x.Gender==(Gender)gender);
             var results = _messages.Dispatch(new GetStudentsResultsInExerciseQuery(students.Select(x => x.Id).ToList(),exercise.Id));
             var resultUniqueDates = _resultService.GetUniqueDates(results);
 
@@ -65,15 +65,16 @@ namespace WebApplication2.Controllers
             {
                 SelectedExerciseId = exerciseId,
                 ClassId = classId,
-                Dates = resultUniqueDates.ToList()
+                Dates = resultUniqueDates.ToList(),
+                Gender = gender
             };
             return View(model);
         }
         
-        public IActionResult GetSchoolClassResults(int exerciseId,int classId,DateTime dateTime)
+        public IActionResult GetSchoolClassResults(int exerciseId,int classId,int gender,DateTime dateTime)
         {
             var exercise = _messages.Dispatch(new GetExerciseQuery(exerciseId));
-            var students = _messages.Dispatch(new GetClassQuery(classId)).Students;
+            var students = _messages.Dispatch(new GetClassQuery(classId)).Students.Where(x=>x.Gender==(Gender)gender);
             var results = _messages.Dispatch(new GetStudentsResultsInExerciseQuery(students.Select(x => x.Id).ToList(),exercise.Id,dateTime));
             var isCurrentUserTeacher = User.IsInRole(Role.Teacher);
                 
@@ -97,12 +98,5 @@ namespace WebApplication2.Controllers
         
     }
   
-    public class ClassResultVm
-    {
-        public int SelectedExerciseId { get; set; }
-        public int ClassId { get; set; }
-        public List<DateTime> Dates { get; set; }
-            
-        public List<ExerciseVm> Exercises{ get; set; } = new List<ExerciseVm>();
-    }
+
 }

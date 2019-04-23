@@ -21,15 +21,14 @@ namespace WebApplication2.Controllers
     {
         private readonly Messages _messages;
         private readonly PeSportsTrackingContext _context;
-        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ResultController(Messages messages
-            , PeSportsTrackingContext context,UserManager<ApplicationUser> userManager
-           )
+        public ResultController(Messages messages,
+            PeSportsTrackingContext context,
+            UserManager<ApplicationUser> userManager
+        )
         {
             _messages = messages;
             _context = context;
-            _userManager = userManager;
         }
 
         public IActionResult ExerciseList(string name)
@@ -52,7 +51,7 @@ namespace WebApplication2.Controllers
                 Name = x.Name,
                 Id = x.Id
             }).ToList();
-            model.Classes = classesvm.OrderBy(x=>Helpers.GetClassNumberFromClassName(x.Name)).ToList();
+            model.Classes = classesvm.OrderBy(x => Helpers.GetClassNumberFromClassName(x.Name)).ToList();
 
             var modelexer = exercises.Select(x => new ExerciseVm
             {
@@ -63,8 +62,8 @@ namespace WebApplication2.Controllers
             model.Exercises = modelexer;
             return View(model);
         }
-        [Authorize(Roles = "Teacher")]
 
+        [Authorize(Roles = "Teacher")]
         public IActionResult AddResult(int selectedExerciseId, int selectedClassId, int gender)
         {
             var aclass = _messages.Dispatch(new GetClassQuery(selectedClassId));
@@ -103,8 +102,8 @@ namespace WebApplication2.Controllers
             };
             return View(model);
         }
-        [Authorize(Roles = "Teacher")]
 
+        [Authorize(Roles = "Teacher")]
         [HttpPost]
         public IActionResult AddResult(AddResultVm model)
         {
@@ -140,6 +139,7 @@ namespace WebApplication2.Controllers
             return RedirectToAction("AddResult",
                 new {selectedExerciseId = exercise.Id, selectedClassId = aclass.Id, gender = (int) student.Gender});
         }
+
         [Authorize(Roles = "Teacher")]
         public IActionResult EditResult(int resultId)
         {
@@ -151,6 +151,7 @@ namespace WebApplication2.Controllers
 
             return View(result);
         }
+
         [Authorize(Roles = "Teacher")]
         [HttpPost]
         public IActionResult EditResult(int resultId, decimal resultValue)
@@ -198,9 +199,10 @@ namespace WebApplication2.Controllers
             }
 
             var isTeacher = User.IsInRole(Role.Teacher);
-            var results = _messages.Dispatch(new GetClassNumberResultsQuery(exercise.Id, classNumber,isTeacher)).Where(x=>x.CreatedOn > DateTime.Now.AddYears(-year));
+            var results = _messages.Dispatch(new GetClassNumberResultsQuery(exercise.Id, classNumber, isTeacher))
+                .Where(x => x.CreatedOn > DateTime.Now.AddYears(-year));
             results = results.Distinct(new StudentComparer()).ToList();
-           
+
             var model = new LeaderBoardResultListVm();
             model.Gender = gender;
             model.ExerciseId = exerciseId;

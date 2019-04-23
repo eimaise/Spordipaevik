@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Data;
@@ -33,7 +34,7 @@ namespace Core.AppServices
                 IQueryable<Student> students = _context.Students;
                 if (!string.IsNullOrWhiteSpace(query.Name))
                 {
-                    students = students.Where(x => x.Name.Contains(query.Name));
+                    students = students.Where(x => x.Name.Contains(query.Name,StringComparison.InvariantCultureIgnoreCase));
                 }
 
                 if (query.RegisteredInSystem != null)

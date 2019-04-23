@@ -2,7 +2,15 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-    
+@{
+    var tempval = TempData["successmessage"] as string;
+}
+@if (!string.IsNullOrWhiteSpace(tempval))
+{
+    <div id="messages" class="alert alert-success alert-dismissible" role="alert">
+        <div id="messages_content">@tempval</div>
+    </div>
+}
 <div class="row ">
     <div class="col">
         Seadista perdioode

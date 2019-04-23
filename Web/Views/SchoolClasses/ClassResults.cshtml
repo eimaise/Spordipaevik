@@ -1,5 +1,5 @@
 ﻿@using Microsoft.EntityFrameworkCore
-@model WebApplication2.Controllers.ClassResultVm
+@model WebApplication2.ViewModels.ClassResultVm
 
 @{
     ViewData["Title"] = "Harjutused";
@@ -55,6 +55,7 @@
         $.getJSON("/SchoolClasses/GetSchoolClassResults", {
                 classId:"@Model.ClassId",
                 exerciseId:"@Model.SelectedExerciseId",
+                gender:"@Model.Gender",
                 dateTime:dateTime
             },
             function(data) {

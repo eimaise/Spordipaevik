@@ -60,7 +60,7 @@ namespace WebApplication2.Controllers
 
             var studentInviteCommand = new StudentInviteCommand(_secureTokenGenerator.Generate(20), student);
             _messages.Dispatch(studentInviteCommand);
-            TempData["message"] = "Registration invite successfully sent";
+            TempData["message"] = "Kutse edukalt saadetud";
 
             return RedirectToAction("FindStudent", "Admin", new {name = student.Name});
         }
@@ -83,7 +83,7 @@ namespace WebApplication2.Controllers
         public IActionResult ChangeClassNumbers()
         {
             _messages.Dispatch(new ChangeClassNumberCommand());
-
+            TempData["successmessage"] = "Perioodi uuendamine õnnestus";
             return RedirectToAction("AdminSettings");
         }
     }

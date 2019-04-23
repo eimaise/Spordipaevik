@@ -6,10 +6,4 @@ namespace WebApplication2.ViewModels.Teachers
     {
         public List<TeacherVm> Teachers = new List<TeacherVm>();
     }
-
-    public class TeacherVm
-    {
-        public string Email { get; set; }
-        public string Name { get; set; }
-    }
 }

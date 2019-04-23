@@ -21,6 +21,7 @@
           <e p="GetExerciseQuery.cs" t="Include" />
           <e p="GetInviteQuery.cs" t="Include" />
           <e p="GetResultQuery.cs" t="Include" />
+          <e p="GetStudentByStudentCardNrQuery.cs" t="Include" />
           <e p="GetStudentListQuery.cs" t="Include" />
           <e p="GetStudentQuery.cs" t="Include" />
           <e p="GetStudentsResultsInExerciseQuery.cs" t="Include" />
@@ -212,13 +213,21 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="ViewModels" t="Include">
+          <e p="ClassResultVm.cs" t="Include" />
           <e p="Exercises" t="Include">
             <e p="AddExerciseVv.cs" t="Include" />
+            <e p="ExerciseListVm.cs" t="Include" />
+            <e p="ExerciseVm.cs" t="Include" />
+            <e p="LeaderboardListVm.cs" t="Include" />
           </e>
           <e p="Registrations" t="Include">
             <e p="RegisterVm.cs" t="Include" />
           </e>
           <e p="Results" t="Include">
+            <e p="AddResultVm.cs" t="Include" />
+            <e p="ClassVm.cs" t="Include" />
+            <e p="LeaderBoardResultListVm.cs" t="Include" />
+            <e p="LeaderBoardResultVm.cs" t="Include" />
             <e p="ResultVm.cs" t="Include" />
           </e>
           <e p="Students" t="Include">
@@ -232,6 +241,7 @@
           <e p="Teachers" t="Include">
             <e p="AddTeacherVm.cs" t="Include" />
             <e p="TeacherListVm.cs" t="Include" />
+            <e p="TeacherVm.cs" t="Include" />
           </e>
           <e p="User" t="Include">
             <e p="ChangeUserInfoVm.cs" t="Include" />

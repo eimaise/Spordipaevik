@@ -29,9 +29,7 @@ namespace Core.AppServices
                 {
                     return _context.Exercises.ToList();
                 }
-                return _context.Exercises.Where(x=>x.Name.Contains(query.Name,StringComparison.CurrentCultureIgnoreCase)
-                                                   || x.Comment.Contains(query.Name,StringComparison.CurrentCultureIgnoreCase))
-                    .ToList();
+                return _context.Exercises.Where(x=>x.Name.Contains(query.Name,StringComparison.CurrentCultureIgnoreCase)).ToList();
             }
         }
     }

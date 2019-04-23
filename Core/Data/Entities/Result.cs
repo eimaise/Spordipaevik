@@ -37,16 +37,4 @@ namespace Core.Data.Entities
             ResultValue.Value = resultValue;
         }
     }
-
-//    public class DateTimeRange : ValueObject<DateTimeRange>
-//    {
-//        public DateTimeRange(DateTime start, DateTime end)
-//        {
-//            Start = start;
-//            End = end;
-//        }
-//        public DateTime Start { get; set; }
-//        public DateTime End { get; set; }
-//
-//    }
 }

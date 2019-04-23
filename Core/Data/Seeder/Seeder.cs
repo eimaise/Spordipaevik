@@ -30,7 +30,7 @@ namespace Core.Data.Seeder
 
         public async Task SeedAsync()
         {
-            _ctx.Database.EnsureDeleted();
+//            _ctx.Database.EnsureDeleted();
 
             _ctx.Database.EnsureCreated();
 
@@ -136,6 +136,7 @@ namespace Core.Data.Seeder
                 {
                     await _userManager.AddToRoleAsync(teacher, "Teacher");
                 }
+
                 var appStudent = await _userManager.CreateAsync(student, "Admin");
                 if (appStudent.Succeeded)
                 {
@@ -147,14 +148,16 @@ namespace Core.Data.Seeder
         private void AddResults()
         {
             var classes = _ctx.Classes;
-            var longJump = _ctx.Exercises.FirstOrDefault(x => x.Name == "Kaugushüpe");
-            var ballThrow = _ctx.Exercises.FirstOrDefault(x => x.Name == "Pallivise");
+            var exercises = _ctx.Exercises;
 
             foreach (var schoolClass in classes)
             {
                 foreach (var student in schoolClass.Students)
                 {
-                    AddResultToStudent(student, longJump, Helpers.GetClassNumberFromClassName(schoolClass.Name));
+                    foreach (var exercise in exercises)
+                    {
+                        AddResultToStudent(student, exercise, Helpers.GetClassNumberFromClassName(schoolClass.Name));
+                    }
                 }
             }
         }
@@ -326,8 +329,9 @@ namespace Core.Data.Seeder
             {
                 students.AddRange(CreateClassStudents(schoolClass.Name, schoolClass.Id));
             }
-            //applicationstudet test user 
-            students.Add( new Student
+
+            //applicationstudet test user
+            students.Add(new Student
             {
                 Name = $"Testkasutaja student ",
                 StudentCardNumber = "Student",

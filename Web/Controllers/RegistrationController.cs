@@ -23,8 +23,9 @@ namespace WebApplication2.Controllers
             _messages = messages;
         }
 
-        public IActionResult RegisterStudent(string token)
+        public async Task<IActionResult> RegisterStudent(string token)
         {
+            await _signInManager.SignOutAsync();
             var model = new RegisterVm
             {
                 Token = token
@@ -52,7 +53,8 @@ namespace WebApplication2.Controllers
 
                 if (student.StudentCardNumber != model.StudentCardNr)
                 {
-                    return Json("Vale õpilaspileti number");
+                    ModelState.AddModelError("","Õpilaspileti number ei ole õige");
+                    return View(model);
 
                 }
                 var user = new ApplicationUser

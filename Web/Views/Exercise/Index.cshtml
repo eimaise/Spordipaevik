@@ -2,9 +2,22 @@
 @{
     ViewData["Title"] = "Õpilased";
 }
-<a style="margin-bottom:10px" class="btn btn-success"asp-action="Create" method="get">
-    Loo uus harjutus
-</a>
+
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <form asp-action="Index" method="get">
+                <h2 style="margin-top: 10px">Leia harjutus:</h2>
+                <input id="findInput" placeholder="Otsi harjutust" class="form-control " style="margin-bottom: 10px" name="name" type="text" value=@Context.Request.Query["name"]>
+
+                <button style="margin-bottom: 10px" class="btn btn-primary">Otsi</button>
+                <a style="margin-bottom:10px" class="btn btn-success"asp-action="Create" method="get">
+                    Loo uus harjutus
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
 <table  class="table table-striped table-bordered nowrap" style="width: 100%">
     <thead>
     <tr>

@@ -19,7 +19,6 @@ namespace WebApplication2.Controllers
         }
         public IActionResult Index()
         {
-            var a = _ctx.Invites.ToList();
             return View();
         }
 

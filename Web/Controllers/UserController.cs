@@ -116,9 +116,15 @@ namespace WebApplication2.Controllers
         public async Task<IActionResult>  ChangeResultStatus(UserInfoVm model)
         {
             var user = await _userManager.GetUserAsync(User);
-            _messages.Dispatch(new EditAppUserCommand(!user.HideResults, user));
-            var editstudentCommand = new EditAddStudentCommand();
-            editstudentCommand.ShouldResultsBeHidden = !user.HideResults;
+            var hideStatus = !user.HideResults;
+            _messages.Dispatch(new EditAppUserCommand(hideStatus, user));
+           var student =  _messages.Dispatch(new GetStudentByStudentCardNrQuery(user.UserName));
+
+            var editstudentCommand = new EditAddStudentCommand()
+            {
+                Id = student.Id
+            };
+            editstudentCommand.ShouldResultsBeHidden = hideStatus;
             _messages.Dispatch(editstudentCommand);
             return RedirectToAction("MyInfo");
         }
