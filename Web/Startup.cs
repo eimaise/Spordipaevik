@@ -78,16 +78,8 @@ namespace WebApplication2
                 .AddEntityFrameworkStores<PeSportsTrackingContext>()
                 .AddDefaultTokenProviders();
 
-//            if (Currentevironment.IsDevelopment())
-//            {
-//                services.AddDbContext<PeSportsTrackingContext>(
-//                    options => options.UseInMemoryDatabase("spordipaevik"));
-//            }
-//            elseS
-//            {
             services.AddDbContext<PeSportsTrackingContext>(o => o.UseNpgsql(
                 Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies());
-//            }
 
             //MS SQL SERVERI OMA 
             //services.AddDbContext<PeSportsTrackingContext>(o => o.UseSqlServer(
@@ -189,18 +181,6 @@ namespace WebApplication2
                 app.UseHsts();
             }
 
-//            app.Use(async (ctx, next) =>
-//            {
-//                if (ctx.Request.Path == "/mida-iganes")
-//                                 {
-//                    await ctx.Response.WriteAsync("okei.");
-//                }
-//                else
-//                {
-//                    await next();
-//                }
-//            });
-            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
