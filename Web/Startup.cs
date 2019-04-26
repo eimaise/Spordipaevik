@@ -1,6 +1,14 @@
 ﻿using System.Collections.Generic;
 using Core;
 using Core.AppServices;
+using Core.AppServices.AppUsers;
+using Core.AppServices.Class;
+using Core.AppServices.Excercise;
+using Core.AppServices.Invite;
+using Core.AppServices.Registrations;
+using Core.AppServices.Results;
+using Core.AppServices.Students;
+using Core.AppServices.Units;
 using Core.Data;
 using Core.Data.Entities;
 using Core.Data.Seeder;
@@ -55,6 +63,9 @@ namespace WebApplication2
             services.AddTransient<IResultService, ResultService>();
             services.AddTransient<IStudentMapper, StudentMapper>();
             services.AddTransient<ITeacherMapper, TeacherMapper>();
+            services.AddTransient<ISchoolClassMapper, SchoolClassMapper>();
+            services.AddTransient<IExerciseMapper, ExerciseMapper>();
+            services.AddTransient<IResultMapper, ResultMapper>();
             services.AddTransient<IEmailSender, EmailSender>();
 
 
@@ -181,7 +192,7 @@ namespace WebApplication2
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

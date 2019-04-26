@@ -9,28 +9,45 @@
     <e p="C:\Users\MartinSaar\RiderProjects\WebApplication2" t="IncludeFlat">
       <e p="Core" t="IncludeRecursive">
         <e p="AppServices" t="Include">
-          <e p="AddExerciseCommand.cs" t="Include" />
-          <e p="AddUnitCommand.cs" t="Include" />
-          <e p="ChangeClassNumberCommand.cs" t="Include" />
-          <e p="EditAddStudentCommand.cs" t="Include" />
-          <e p="EditResultCommand.cs" t="Include" />
-          <e p="GetAppUserListQuery.cs" t="Include" />
-          <e p="GetClassListQuery.cs" t="Include" />
-          <e p="GetClassQuery.cs" t="Include" />
-          <e p="GetExerciseListQuery.cs" t="Include" />
-          <e p="GetExerciseQuery.cs" t="Include" />
-          <e p="GetInviteQuery.cs" t="Include" />
-          <e p="GetResultQuery.cs" t="Include" />
-          <e p="GetStudentByStudentCardNrQuery.cs" t="Include" />
-          <e p="GetStudentListQuery.cs" t="Include" />
-          <e p="GetStudentQuery.cs" t="Include" />
-          <e p="GetStudentsResultsInExerciseQuery.cs" t="Include" />
-          <e p="GetStudentWithStudentCardNoQuery.cs" t="Include" />
-          <e p="GetUnitListQuery.cs" t="Include" />
-          <e p="GetUnitQuery.cs" t="Include" />
-          <e p="StudentInviteCommand.cs" t="Include" />
-          <e p="TeacherRegistrationCommand.cs" t="Include" />
-          <e p="UserRegisteredCommand.cs" t="Include" />
+          <e p="AppUsers" t="Include">
+            <e p="GetAppUserListQuery.cs" t="Include" />
+          </e>
+          <e p="Classss" t="Include">
+            <e p="ChangeClassNumberCommand.cs" t="Include" />
+            <e p="GetClassListQuery.cs" t="Include" />
+            <e p="GetClassQuery.cs" t="Include" />
+          </e>
+          <e p="Excercises" t="Include">
+            <e p="AddExerciseCommand.cs" t="Include" />
+            <e p="GetExerciseListQuery.cs" t="Include" />
+            <e p="GetExerciseQuery.cs" t="Include" />
+          </e>
+          <e p="Invites" t="Include">
+            <e p="GetInviteByTokenQuery.cs" t="Include" />
+            <e p="GetInviteQuery.cs" t="Include" />
+          </e>
+          <e p="Registrations" t="Include">
+            <e p="TeacherRegistrationCommand.cs" t="Include" />
+            <e p="UserRegisteredCommand.cs" t="Include" />
+          </e>
+          <e p="Results" t="Include">
+            <e p="EditResultCommand.cs" t="Include" />
+            <e p="GetResultQuery.cs" t="Include" />
+          </e>
+          <e p="Students" t="Include">
+            <e p="EditAddStudentCommand.cs" t="Include" />
+            <e p="GetStudentByStudentCardNrQuery.cs" t="Include" />
+            <e p="GetStudentListQuery.cs" t="Include" />
+            <e p="GetStudentQuery.cs" t="Include" />
+            <e p="GetStudentsResultsInExerciseQuery.cs" t="Include" />
+            <e p="GetStudentWithStudentCardNoQuery.cs" t="Include" />
+            <e p="StudentInviteCommand.cs" t="Include" />
+          </e>
+          <e p="Units" t="Include">
+            <e p="AddUnitCommand.cs" t="Include" />
+            <e p="GetUnitListQuery.cs" t="Include" />
+            <e p="GetUnitQuery.cs" t="Include" />
+          </e>
         </e>
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Core.csproj" t="IncludeRecursive" />
@@ -46,11 +63,13 @@
             <e p="TeacherRegistration.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
           </e>
-          <e p="Helpers.cs" t="Include" />
           <e p="PESportsTrackingContext.cs" t="Include" />
           <e p="Seeder" t="Include">
             <e p="Seeder.cs" t="Include" />
           </e>
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="Helper.cs" t="Include" />
         </e>
         <e p="ICommand.cs" t="Include" />
         <e p="IQuery.cs" t="Include" />
@@ -78,19 +97,39 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Tests" t="IncludeRecursive">
-        <e p="AdminControllerTests.cs" t="Include" />
         <e p="AppServices" t="Include">
           <e p="AddExerciseCommandTests.cs" t="Include" />
           <e p="AddunitCommandTests.cs" t="Include" />
           <e p="EditAddStudentCommandTests.cs" t="Include" />
           <e p="EditStudentCommandTests.cs" t="Include" />
           <e p="GetAppUserListQueryTests.cs" t="Include" />
+          <e p="GetInviteQueryTests.cs" t="Include" />
+          <e p="GetResultQueryTests.cs" t="Include" />
           <e p="HomeControllerTests.cs" t="Include" />
           <e p="UserRegisteredCommandTests.cs" t="Include" />
         </e>
         <e p="Bin" t="ExcludeRecursive" />
-        <e p="ChartDataServiceTests.cs" t="Include" />
-        <e p="ExerciseControllerTests.cs" t="Include" />
+        <e p="Charts" t="Include">
+          <e p="ChartDataServiceTests.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AdminControllerTests.cs" t="Include" />
+          <e p="ExerciseControllerTests.cs" t="Include" />
+          <e p="RegistrationControllerTests.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="SchoolClassTests.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="HelpersTests.cs" t="Include" />
+        </e>
+        <e p="Mappers" t="Include">
+          <e p="ExerciseMapperTests.cs" t="Include" />
+          <e p="ResultMapperTests.cs" t="Include" />
+          <e p="SchoolClassMapperTests.cs" t="Include" />
+          <e p="StudentMapperTests.cs" t="Include" />
+          <e p="TeacherMapperTests.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -99,10 +138,7 @@
             </e>
           </e>
         </e>
-        <e p="RegistrationControllerTests.cs" t="Include" />
         <e p="SecureTokenGeneratorTests.cs" t="Include" />
-        <e p="StudentMapperTests.cs" t="Include" />
-        <e p="TeacherMapperTests.cs" t="Include" />
         <e p="Tests.csproj" t="IncludeRecursive" />
       </e>
       <e p="Web" t="IncludeRecursive">
@@ -188,6 +224,9 @@
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Mappers" t="Include">
+          <e p="ExerciseMapper.cs" t="Include" />
+          <e p="ResultMapper.cs" t="Include" />
+          <e p="SchoolClassMapper.cs" t="Include" />
           <e p="StudentMapper.cs" t="Include" />
           <e p="TeacherMapper.cs" t="Include" />
         </e>

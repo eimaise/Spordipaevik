@@ -1,14 +1,20 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core;
 using Core.AppServices;
+using Core.AppServices.Excercise;
+using Core.AppServices.Results;
+using Core.AppServices.Students;
 using Core.Data;
 using Core.Data.Entities;
+using Core.Helpers;
 using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication2.Mappers;
 using WebApplication2.Services;
 using WebApplication2.ViewModels.Exercises;
 using WebApplication2.ViewModels.Results;
@@ -21,14 +27,19 @@ namespace WebApplication2.Controllers
     {
         private readonly Messages _messages;
         private readonly PeSportsTrackingContext _context;
+        private readonly ISchoolClassMapper _schoolClassMapper;
+        private readonly IResultMapper _resultMapper;
 
         public ResultController(Messages messages,
             PeSportsTrackingContext context,
-            UserManager<ApplicationUser> userManager
+            ISchoolClassMapper schoolClassMapper,
+            IResultMapper resultMapper
         )
         {
             _messages = messages;
             _context = context;
+            _schoolClassMapper = schoolClassMapper;
+            _resultMapper = resultMapper;
         }
 
         public IActionResult ExerciseList(string name)
@@ -46,12 +57,8 @@ namespace WebApplication2.Controllers
             }
 
             var model = new ExerciseListVm();
-            var classesvm = classes.Select(x => new ClassVm
-            {
-                Name = x.Name,
-                Id = x.Id
-            }).ToList();
-            model.Classes = classesvm.OrderBy(x => Helpers.GetClassNumberFromClassName(x.Name)).ToList();
+            var classesvm = _schoolClassMapper.ToClassVm(classes);
+            model.Classes = classesvm.OrderBy(x => Helper.GetClassNumberFromClassName(x.Name)).ToList();
 
             var modelexer = exercises.Select(x => new ExerciseVm
             {
@@ -59,6 +66,7 @@ namespace WebApplication2.Controllers
                 Name = x.Name,
                 Comment = x.Comment
             }).ToList();
+
             model.Exercises = modelexer;
             return View(model);
         }
@@ -78,28 +86,7 @@ namespace WebApplication2.Controllers
                 return new NotFoundResult();
             }
 
-            var model = new ResultVm
-            {
-                ClassId = aclass.Id,
-                ExerciseId = exercise.Id,
-                ClassName = aclass.Name,
-                ExerciseName = exercise.Name,
-                IsTime = exercise.Unit.IsTime,
-                Students = aclass.Students.Where(x => x.Gender == (Gender) gender).Select(x => new StudentVm
-                {
-                    Name = x.Name,
-                    Id = x.Id,
-                    Results = x.Results.Where(r => r.IsTodaysResult && r.ExerciseId == exercise.Id)
-                        .Select(o => new StudentVm.ResultVm
-                        {
-                            Id = o.Id,
-                            ResultValue = o.ResultValue.Value.ToString()
-                        }).ToList(),
-                    BestResult = x.Results.Where(r => r.ExerciseId == exercise.Id && !r.IsTodaysResult)
-                        .OrderByDescending(r => r.ResultValue.Value).Select(r => r.ResultValue.Value.ToString())
-                        .FirstOrDefault()
-                }).ToList()
-            };
+            var model = _resultMapper.ToResultVm(gender, aclass, exercise);
             return View(model);
         }
 
@@ -209,12 +196,7 @@ namespace WebApplication2.Controllers
             model.ClassNumber = classNumber;
             foreach (var result in results)
             {
-                model.LeaderBoardResult.Add(new LeaderBoardResultVm
-                {
-                    ResultValue = result.ResultValue.Value,
-                    Name = result.Student.Name,
-                    DateTime = result.CreatedOn,
-                });
+                model.LeaderBoardResult.Add(_resultMapper.ToLeaderBoardResultVm(result));
             }
 
             return View(model);

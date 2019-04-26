@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.AppServices;
+using Core.AppServices.AppUsers;
 using Core.Data;
 using Core.Data.Entities;
 using Microsoft.EntityFrameworkCore;

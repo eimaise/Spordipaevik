@@ -6,6 +6,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 using Core;
 using Core.AppServices;
+using Core.AppServices.Excercise;
+using Core.AppServices.Students;
 using Core.Data;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -99,12 +101,7 @@ namespace WebApplication2.Controllers
 
             var allResult = _context.Results.Where(x => x.StudentId == id && x.ExerciseId == excercise.Id)
                 .OrderByDescending(x => x.ResultValue.Value);
-            var model = new StudentExerciseVm
-            {
-                ExerciseName = excercise.Name,
-                ExerciseId = excercise.Id,
-                StudentId = student.Id
-            };
+            var model = _studentMapper.ToStudentExerciseVm(excercise, student);
             foreach (var result in allResult)
             {
                 if (!model.StudentResults.Any(x => x.Date == result.CreatedOn.Date))

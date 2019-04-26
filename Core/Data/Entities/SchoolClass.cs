@@ -5,10 +5,16 @@ namespace Core.Data.Entities
 {
     public class SchoolClass : BaseEntity
     {
-        public string Name { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public SchoolClass(string name, bool isFinished = false)
+        {
+            Name = name;
+            CreatedOn = DateTime.Now;
+            IsFinished = isFinished;
+        }
+        public string Name { get; private set; }
+        public DateTime CreatedOn { get; private set; }
         private ICollection<Student> _students;
-        public bool IsFinished { get; set; }
+        public bool IsFinished { get; private set; }
 
         public virtual ICollection<Student> Students
         {
@@ -21,5 +27,16 @@ namespace Core.Data.Entities
                 _students = value;
             }
         }
+
+        public void SetFinishedStatus(bool status)
+        {
+            IsFinished = status;
+        }
+        public void ChangeName(string name)
+        {
+            Name = name;
+        }
     }
+
+
 }

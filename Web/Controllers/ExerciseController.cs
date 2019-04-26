@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Core;
 using Core.AppServices;
+using Core.AppServices.Excercise;
+using Core.AppServices.Units;
 using Core.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

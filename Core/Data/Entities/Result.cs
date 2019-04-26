@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Helpers;
 
 namespace Core.Data.Entities
 {
@@ -12,7 +13,8 @@ namespace Core.Data.Entities
         public Result(Student student,int exerciseId,ResultValue resultValue,DateTime createdOn)
         {
             CreatedOn = createdOn;
-            ClassNumber = Helpers.GetClassNumberFromClassName(student.SchoolClass.Name);
+            Student = student;
+            ClassNumber = Helper.GetClassNumberFromClassName(student.SchoolClass.Name);
             SchoolClassId = student.SchoolClassId;
             ResultValue = resultValue;
             ExerciseId = exerciseId;
@@ -29,7 +31,7 @@ namespace Core.Data.Entities
         public virtual Exercise Exercise { get; private set; }
         public int ExerciseId { get; set; }
         [Column(TypeName = "decimal(18, 2)")]
-        public virtual ResultValue ResultValue { get; private  set; }
+        public virtual ResultValue ResultValue { get;  set; }
         public bool IsTodaysResult => CreatedOn > DateTime.Today;
 
         public void ChangeResultValue(decimal resultValue)

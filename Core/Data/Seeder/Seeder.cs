@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Data.Entities;
+using Core.Helpers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
@@ -156,7 +157,7 @@ namespace Core.Data.Seeder
                 {
                     foreach (var exercise in exercises)
                     {
-                        AddResultToStudent(student, exercise, Helpers.GetClassNumberFromClassName(schoolClass.Name));
+                        AddResultToStudent(student, exercise, Helper.GetClassNumberFromClassName(schoolClass.Name));
                     }
                 }
             }
@@ -192,18 +193,9 @@ namespace Core.Data.Seeder
         {
             for (int i = 1; i < 13; i++)
             {
-                var schoolClassA = new SchoolClass
-                {
-                    Name = i + ("A")
-                };
-                var schoolClassB = new SchoolClass
-                {
-                    Name = i + ("B")
-                };
-                var schoolClassC = new SchoolClass
-                {
-                    Name = i + ("C")
-                };
+                var schoolClassA = new SchoolClass(i + "A");
+                var schoolClassB = new SchoolClass(i + ("B"));
+                var schoolClassC = new SchoolClass(i + ("C"));
                 _ctx.Classes.AddAsync(schoolClassA);
                 _ctx.Classes.AddAsync(schoolClassB);
                 _ctx.Classes.AddAsync(schoolClassC);

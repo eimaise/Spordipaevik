@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using WebApplication2.Controllers;
+using WebApplication2.ViewModels;
+using WebApplication2.ViewModels.Exercises;
+using WebApplication2.ViewModels.Results;
 using WebApplication2.ViewModels.Students;
 
 namespace WebApplication2.Mappers
@@ -12,6 +16,7 @@ namespace WebApplication2.Mappers
     {
         AdminStudentsListVm ToStudentsListVm(List<Student> students);
         AdminAddEditStudenVm ToAdminAddEditStudentVm(Student student);
+        StudentExerciseVm ToStudentExerciseVm(Exercise excercise, Student student);
     }
 
     public class StudentMapper : IStudentMapper
@@ -21,6 +26,15 @@ namespace WebApplication2.Mappers
         public StudentMapper(IUrlHelperFactory urlHelperFactory, IActionContextAccessor actionContextAccessor)
         {
             _urlHelper = urlHelperFactory.GetUrlHelper(actionContextAccessor.ActionContext);
+        }
+        public  StudentExerciseVm ToStudentExerciseVm(Exercise excercise, Student student)
+        {
+            return new StudentExerciseVm
+            {
+                ExerciseName = excercise.Name,
+                ExerciseId = excercise.Id,
+                StudentId = student.Id
+            };
         }
 
         public AdminStudentsListVm ToStudentsListVm(List<Student> students)
@@ -68,4 +82,9 @@ namespace WebApplication2.Mappers
             };
         }
     }
+
+
+
+
+
 }

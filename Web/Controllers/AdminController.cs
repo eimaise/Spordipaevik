@@ -1,5 +1,7 @@
 using Core;
 using Core.AppServices;
+using Core.AppServices.Class;
+using Core.AppServices.Students;
 using Core.Data;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Authorization;

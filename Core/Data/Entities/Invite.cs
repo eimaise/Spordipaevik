@@ -17,7 +17,6 @@ namespace Core.Data.Entities
             Used = true;
         }
         public int StudentId { get; private set; }
-//        public virtual Student Student { get; set; }
         public string Token { get; private set; }
         public bool Used { get; private set; }
         public string Email { get; private set; }

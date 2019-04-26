@@ -1,6 +1,8 @@
 using System.Linq;
 using Core;
 using Core.AppServices;
+using Core.AppServices.AppUsers;
+using Core.AppServices.Registrations;
 using Core.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
