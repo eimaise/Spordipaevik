@@ -7,7 +7,7 @@
 @{
     var tempval = TempData["message"] as string;
 }
-<a class="btn btn-info"asp-action="NotRegisteredStudents">Mitte registreerinud kasutajad</a>
+<a class="btn btn-secondary"asp-action="NotRegisteredStudents">Mitte registreerinud kasutajad</a>
 
 @if (!string.IsNullOrWhiteSpace(tempval))
 {
@@ -105,7 +105,7 @@
             </tbody>
         </table>
         <div class="col">
-            <a class="btn btn-success" asp-controller="Student" asp-action="AddStudent">Lisa õpilane</a>
+            <a class="btn btn-primary" asp-controller="Student" asp-action="AddStudent">Lisa õpilane</a>
         </div>
     </div>
 </div>

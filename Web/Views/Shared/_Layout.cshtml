@@ -5,16 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Web</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     @* charts *@
-    
+
     @* <script src="https://code.highcharts.com/highcharts.js"></script> *@
     @* <script src="https://code.highcharts.com/modules/exporting.js"></script> *@
     @* <script src="https://code.highcharts.com/modules/export-data.js"></script> *@
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     @* *@
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+
     @* <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> *@
     @* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> *@
 
@@ -34,7 +36,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    @*     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> *@
+    @* <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> *@
     @* *@
     @* </environment> *@
     @* <environment exclude="Development"> *@
@@ -46,105 +48,112 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top  static-top">
-    <div class="container">
-        <div class="row">
-            <a asp-action="Index" asp-controller="Home">  <h2  class="navbar-brand" >Tulemuste päevik </h2></a>
-            <h2 class="navbar-brand" href="#"> @UserManager.GetUserName(User)</h2>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a asp-action="Index" asp-controller="Home">  <h2 class="navbar-brand">Tulemuste päevik </h2></a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                @if (User.IsInRole("Admin"))
-                {
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="Admin" asp-action="AdminSettings">Kooli seaded</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="Admin" asp-action="Index">Õpilaste haldamine</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="Teacher" asp-action="Teachers">Õpetajate haldamine</a>
+                        </li>
+                    }
+                    @if (User.IsInRole("Student"))
+                    {
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="User" asp-action="ExerciseList">Minu tulemused</a>
+                        </li>
+
+                    }
                     <li class="nav-item ">
-                        <a class="nav-link" asp-controller="Admin" asp-action="AdminSettings">Kooli seaded</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" asp-controller="Admin" asp-action="Index">Õpilaste haldamine</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" asp-controller="Teacher" asp-action="Teachers">Õpetajate haldamine</a>
-                    </li>
-                }
-                @if (User.IsInRole("Student"))
-                {
-                    <li class="nav-item ">
-                        <a class="nav-link"  asp-controller="User" asp-action="ExerciseList">Minu tulemused</a>
+                        <a class="nav-link" asp-area="" asp-controller="Result" asp-action="Leaderboard">Edetabelid</a>
                     </li>
 
-                }
-                <li class="nav-item ">
-                    <a class="nav-link" asp-area="" asp-controller="Result" asp-action="Leaderboard">Edetabelid</a>
-                </li>
-          
-                @if (User.IsInRole("Teacher"))
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tulemused
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Index">Õpilased</a>
-                            <a class="dropdown-item" asp-area="" asp-controller="SchoolClasses" asp-action="List">Klassid</a>
-                        </div>
-                    </li>
-@*                     <li class="nav-item "> *@
-@*                         <a class="nav-link" asp-area="" asp-controller="Student" asp-action="Index">Õpilased</a> *@
-@*                     </li> *@
-@*                     <li class="nav-item"> *@
-@*                         <a class="nav-link" asp-area="" asp-controller="SchoolClasses" asp-action="List">Klassid</a> *@
-@*                     </li> *@
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Exercise" asp-action="Index">Harjutused</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Result" asp-action="ExerciseList">Lisa tulemusi</a>
-                    </li>
-                }
+                    @if (User.IsInRole("Teacher"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tulemused
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-controller="Student" asp-action="Index">Õpilased</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="SchoolClasses" asp-action="List">Klassid</a>
+                            </div>
+                        </li>
+                        @*                     <li class="nav-item "> *@
+                        @*                         <a class="nav-link" asp-area="" asp-controller="Student" asp-action="Index">Õpilased</a> *@
+                        @*                     </li> *@
+                        @*                     <li class="nav-item"> *@
+                        @*                         <a class="nav-link" asp-area="" asp-controller="SchoolClasses" asp-action="List">Klassid</a> *@
+                        @*                     </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Exercise" asp-action="Index">Harjutused</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Result" asp-action="ExerciseList">Lisa tulemus</a>
+                        </li>
+                    }
 
-                @if (!SignInManager.IsSignedIn(User))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Logi sisse</a>
-                    </li>
-                   
-                }
-                else
-                {
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Logi sisse</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" method="post" id="logoutForm" class="navbar-right">
-                            <button type="submit" class="btn btn-link navbar-link">Logout</button>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-action="MyInfo" asp-controller="User" >Minu seaded</a>
-                    </li>
-                }
-                @* <li class="nav-item"> *@
-                @* <form class="form-inline my-2 my-lg-0"> *@
-                @*     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> *@
-                @*     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button> *@
-                @* </form> *@
-                @* </li> *@
+                    }
+                    else
+                    {
 
-            </ul>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @UserManager.GetUserName(User)
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownUser">
+                                <a class="dropdown-item" asp-action="MyInfo" asp-controller="User">Minu seaded</a>
+                                <div class="dropdown-divider"></div>
+
+                                <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" method="post" id="logoutForm" class="navbar-right">
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </div>
+                        </li>
+
+
+                    }
+                    @* <li class="nav-item"> *@
+                    @* <form class="form-inline my-2 my-lg-0"> *@
+                    @*     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> *@
+                    @*     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button> *@
+                    @* </form> *@
+                    @* </li> *@
+
+                </ul>
+
+            </div>
         </div>
-    </div>
-</nav>
-@* <partial name="_CookieConsentPartial"/> *@
 
-<div class="container body-content">
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>&copy; Spordipäevik - 2019</p>
-    </footer>
-</div>
-@RenderSection("Scripts", required: false)
+    </nav>
+    @* <partial name="_CookieConsentPartial" /> *@
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Spordipäevik - 2019</p>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

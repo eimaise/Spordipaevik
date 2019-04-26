@@ -2,58 +2,73 @@
 @{
     ViewData["Title"] = "Õpilased";
 }
-<h1>@Model.ExerciseName</h1>
-<table class="table table-striped table-bordered nowrap" style="width: 100%">
-    <thead>
-    <tr>
-        <th>Õpilane</th>
-        <th style="max-width: 150px">Praegused tulemused</th>
-        <th>Eelnev parim tulemus</th>
-        <th>Sisesta tulemus</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var student in Model.Students)
-    {
-                var i = 0;
-        <tr>
-            <td >
-                @student.Name
-            </td>
-            <td>
-                @foreach (var result in student.Results)
-                {
-                    i++;
-                    <h5> @i.
-                        <a class="btn btn-outline-dark"style="margin: 5px; min-width: 90px" data-toggle="tooltip" data-placement="top" title="Muuda tulemust"asp-action="EditResult" asp-route-resultId="@result.Id">
+@*<h1 class="font-size-2">@Model.ExerciseName</h1>*@
+<div class="list-borderless header row md-none">
+    <div class="col-lg">Õpilane</div>
+    <div class="col-lg">Praegused tulemused</div>
+    <div class="col-lg">Eelnev parim tulemus</div>
+    <div class="col-lg col-md-8">Sisesta tulemus</div>
+</div>
+@foreach (var student in Model.Students)
+{
+    var i = 0;
+    <div class="list-borderless list-row row">
+        <div class="col-lg">
+            <span class="md-show">Õpilane</span>
+
+            @student.Name
+        </div>
+        <div class="col-lg">
+            <span class="md-show">Praegused tulemused</span>
+
+            @foreach (var result in student.Results)
+            {
+                i++;
+
+                @*<span class="font-weight-bold">
+                        @i.
+                        <a class="btn btn-outline-dark" style="margin: 5px; min-width: 90px" data-toggle="tooltip" data-placement="top" title="Muuda tulemust" asp-action="EditResult" asp-route-resultId="@result.Id">
                             @result.ResultValue
                         </a>
-                    </h5>
+                    </span>*@
+                <div>
+                    <span class="font-size-1-25">
+                        <span class="color-light-grey">@i.</span>
+                        <label class="result font-weight-bold">@result.ResultValue</label>
+                    </span>
+                    <a class="btn btn-icon btn-sm p-0 d-inline-block" title="Muuda tulemust" asp-action="EditResult" asp-route-resultId="@result.Id">
 
-                }
-            </td>
-            <td>
-                <h5>@student.BestResult</h5>
-            </td>
-            <td>
-                <form asp-action="AddResult" asp-controller="Result" method="post" style="width: 200px">
-                    <div class="form-group">
-                        
-                    <input type="hidden" name="SelectedExerciseId" value="@Model.ExerciseId"/>
-                    <input type="hidden" name="ClassId" value="@Model.ClassId"/>
-                    <input type="hidden" name="StudentId" value="@student.Id"/>
-                    <input type="hidden" name="gender" value="@Model."/>
+                        <i class="material-icons">
+                            edit
+                        </i>
+                    </a>
+                </div>
 
-                    <input type="number" step="0.01" name="result" class="form-control"/>
+            }
+        </div>
+        <div class="col-lg">
+            <span class="md-show">Eelnev parim tulemus</span>
 
-                    <button class="btn btn-success form-control" type="submit">Lisa tulemus</button>
-                    </div>
-                </form>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+            <span class="font-weight-bold font-size-1-25">@student.BestResult</span>
+        </div>
+        <div class="col-lg col-md-8">
+            <form asp-action="AddResult" asp-controller="Result" method="post">
+                <div class="form-group">
+                    <span class="md-show">Sisesta tulemus</span>
+
+                    <input type="hidden" name="SelectedExerciseId" value="@Model.ExerciseId" />
+                    <input type="hidden" name="ClassId" value="@Model.ClassId" />
+                    <input type="hidden" name="StudentId" value="@student.Id" />
+                    <input type="hidden" name="gender" value="@student.Gender" />
+
+                    <input type="number" step="0.01" name="result" class="form-control" />
+
+                    <button class="btn btn-primary btn-wide w-100 mt-2 " type="submit">Lisa tulemus</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();

@@ -14,7 +14,7 @@
         <input asp-for="Password" class="form-control"/>
         <label> Korda parooli</label>
         <input asp-for="ConfirmPassword" class="form-control"/>
-        <button class="btn btn-success" type="submit">Salvesta uus parool</button>
+        <button class="btn btn-secondary" type="submit">Salvesta uus parool</button>
     </div>
 </form>
 @if (@Model.IsStudent)
@@ -22,14 +22,17 @@
     if (@Model.IsResultsHidden)
     {
         <p>Sinu tulemused on varjatud</p>
+        <form asp-action="ChangeResultStatus" method="post">
+            <button class="btn btn-secondary" type="submit">Avalikusta tulemused</button>
+        </form>
     }
     else
     {
         <p>Sinu tulemused on kõigile näha</p>
-
+        <form asp-action="ChangeResultStatus" method="post">
+            <button class="btn btn-secondary" type="submit">Varja tulemused</button>
+        </form>
     }
-    <form asp-action="ChangeResultStatus" method="post">
-        <button class="btn btn-success" type="submit">Muuda</button>
-    </form>
+
 }
     

@@ -40,7 +40,7 @@ namespace WebApplication2.Controllers
             _studentMapper = studentMapper;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Teacher")]
         public IActionResult AddStudent(int id)
         {
             var student = _messages.Dispatch(new GetStudentQuery(id));
@@ -52,8 +52,7 @@ namespace WebApplication2.Controllers
 
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
-
+        [Authorize(Roles = "Admin,Teacher")]
         [HttpPost]
         public IActionResult AddStudent(AdminAddEditStudenVm model)
         {
