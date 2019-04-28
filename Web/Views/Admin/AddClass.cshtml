@@ -1,0 +1,26 @@
+@model WebApplication2.ViewModels.SchoolClasses.AddSchoolClassVm
+@{
+    ViewData["Title"] = "Õpilased";
+}
+@{
+    var StudentWasEdited = TempData["message"] as string;
+}
+@if (!string.IsNullOrWhiteSpace(StudentWasEdited))
+{
+    <div id="messages" class="alert alert-success alert-dismissible" role="alert">
+        <div id="messages_content">@StudentWasEdited</div>
+    </div>
+}
+<form asp-action="AddClass" asp-controller="Admin" method="post">
+    <span asp-validation=""></span>
+    <div class="form-group">
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="Name" class="form-control" placeholder="Nimi"/>
+        <span class="alert-danger" asp-validation-for="Name"></span>
+    </div>
+    <button style="margin-top: 10px"class="btn btn-primary "type="submit">Lisa </button>
+    <a class="btn btn-secondary" style="margin-top: 10px" asp-controller="Admin" asp-action="AdminSettings">Tagasi</a>
+
+</form>
+
+

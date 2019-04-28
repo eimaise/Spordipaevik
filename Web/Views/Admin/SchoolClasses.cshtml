@@ -1,0 +1,18 @@
+@model IEnumerable<WebApplication2.ViewModels.SchoolClasses.SchoolClassVm>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+<div class="list-borderless header row md-none">
+    <div class="col-lg">Nimi</div>
+</div>
+@foreach (var schoolClass in Model)
+{
+        <div class="col-lg form-group">
+            <span class="md-show">Klass</span>
+           <button class="btn btn-primary">@schoolClass.Name</button>
+        </div>
+}

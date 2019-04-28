@@ -2,7 +2,8 @@
 using Core;
 using Core.AppServices;
 using Core.AppServices.AppUsers;
-using Core.AppServices.Class;
+using Core.AppServices.Classes;
+using Core.AppServices.Classss;
 using Core.AppServices.Excercise;
 using Core.AppServices.Invite;
 using Core.AppServices.Registrations;
@@ -176,6 +177,10 @@ namespace WebApplication2
                 services
                     .AddTransient<IQueryHandler<GetStudentByStudentCardNrQuery, Student>,
                         GetStudentByStudentCardNrQuery.GetStudentByStudentCardNrQueryHandler>();
+                services
+                    .AddTransient<ICommandHandler<AddClassCommand>,
+                        AddClassCommand.AddClassCommandHandler>();
+
             }
         }
 

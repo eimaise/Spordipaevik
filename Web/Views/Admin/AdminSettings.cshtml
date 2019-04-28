@@ -16,11 +16,11 @@
         Seadista perioode
     </div>
     <div class="col ">
-        <button class="btn btn-primary">perioode</button>
+        <button class="btn btn-primary">Perioodid</button>
     </div>
 </div>
 
-<div class="row">
+<div class="row form-group">
     <div class="col-lg">
         Uuenda uue õppeaasta klassinumbreid
     </div>
@@ -28,5 +28,16 @@
         <form method="post">
             <button asp-action="ChangeClassNumbers"class="btn btn-primary">Uuenda</button>
         </form>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-lg">
+        Klassid
+    </div>
+    <div class="col-lg">
+        <a asp-action="AddClass"class="btn btn-primary">Lisa klasse</a>
+        <a asp-action="SchoolClasses"class="btn btn-primary">Nimekiri</a>
+
     </div>
 </div>

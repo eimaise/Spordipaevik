@@ -1,7 +1,7 @@
 using Core.Data;
 using Core.Data.Entities;
 
-namespace Core.AppServices
+namespace Core.AppServices.Classes
 {
     public sealed class GetClassQuery : IQuery<SchoolClass> 
     {

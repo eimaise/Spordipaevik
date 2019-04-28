@@ -3,7 +3,7 @@ using Core.Data;
 using Core.Helpers;
 using CSharpFunctionalExtensions;
 
-namespace Core.AppServices.Class
+namespace Core.AppServices.Classss
 {
     public class ChangeClassNumberCommand : ICommand
     {

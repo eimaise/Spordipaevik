@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 using Core;
 using Core.AppServices;
+using Core.AppServices.Classes;
 using Core.AppServices.Excercise;
 using Core.AppServices.Students;
 using Core.Data;

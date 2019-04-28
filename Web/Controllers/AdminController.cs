@@ -1,6 +1,8 @@
+using System.Linq;
 using Core;
 using Core.AppServices;
-using Core.AppServices.Class;
+using Core.AppServices.Classes;
+using Core.AppServices.Classss;
 using Core.AppServices.Students;
 using Core.Data;
 using Core.Data.Entities;
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using WebApplication2.Mappers;
+using WebApplication2.ViewModels.SchoolClasses;
 using WebApplication2.ViewModels.Students;
 
 namespace WebApplication2.Controllers
@@ -41,6 +44,31 @@ namespace WebApplication2.Controllers
             }
 
             return View(model);
+        }
+        public IActionResult AddClass()
+        {
+            return View();
+        }
+        public IActionResult SchoolClasses()
+        {
+            var schoolClasses = _messages.Dispatch(new GetClassListQuery());
+           var model =  schoolClasses.Select(x => new SchoolClassVm
+            {
+                Name = x.Name
+            });
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult AddClass(AddSchoolClassVm model)
+        {
+            if (!ModelState.IsValid)
+            {
+              return View();
+            }
+
+            _messages.Dispatch(command: new AddClassCommand(model.Name));
+            TempData["message"] = "Klass edukalt lisatud";
+            return RedirectToAction("AddClass");
         }
 
         public IActionResult NotRegisteredStudents()
@@ -79,7 +107,6 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
-
 
         [HttpPost]
         public IActionResult ChangeClassNumbers()

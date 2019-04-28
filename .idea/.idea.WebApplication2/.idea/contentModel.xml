@@ -12,7 +12,8 @@
           <e p="AppUsers" t="Include">
             <e p="GetAppUserListQuery.cs" t="Include" />
           </e>
-          <e p="Classss" t="Include">
+          <e p="Classes" t="Include">
+            <e p="AddClassCommand.cs" t="Include" />
             <e p="ChangeClassNumberCommand.cs" t="Include" />
             <e p="GetClassListQuery.cs" t="Include" />
             <e p="GetClassQuery.cs" t="Include" />
@@ -32,6 +33,7 @@
           </e>
           <e p="Results" t="Include">
             <e p="EditResultCommand.cs" t="Include" />
+            <e p="GetClassNumberResultsQuery.cs" t="Include" />
             <e p="GetResultQuery.cs" t="Include" />
           </e>
           <e p="Students" t="Include">
@@ -105,7 +107,6 @@
           <e p="GetAppUserListQueryTests.cs" t="Include" />
           <e p="GetInviteQueryTests.cs" t="Include" />
           <e p="GetResultQueryTests.cs" t="Include" />
-          <e p="HomeControllerTests.cs" t="Include" />
           <e p="UserRegisteredCommandTests.cs" t="Include" />
         </e>
         <e p="Bin" t="ExcludeRecursive" />
@@ -269,6 +270,10 @@
             <e p="LeaderBoardResultVm.cs" t="Include" />
             <e p="ResultVm.cs" t="Include" />
           </e>
+          <e p="SchoolClasses" t="Include">
+            <e p="AddSchoolClassVm.cs" t="Include" />
+            <e p="SchoolClassVm.cs" t="Include" />
+          </e>
           <e p="Students" t="Include">
             <e p="AdminAddEditStudenVm.cs" t="Include" />
             <e p="AdminStudentsListVm.cs" t="Include" />
@@ -291,9 +296,10 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Admin" t="Include">
+            <e p="AddClass.cshtml" t="Include" />
             <e p="AdminSettings.cshtml" t="Include" />
-            <e p="EditStudent.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
+            <e p="SchoolClasses.cshtml" t="Include" />
           </e>
           <e p="Chart" t="Include">
             <e p="Index.cshtml" t="Include" />

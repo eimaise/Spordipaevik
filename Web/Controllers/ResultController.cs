@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 using Core.AppServices;
+using Core.AppServices.Classes;
 using Core.AppServices.Excercise;
 using Core.AppServices.Results;
 using Core.AppServices.Students;
