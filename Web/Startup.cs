@@ -55,7 +55,6 @@ namespace WebApplication2
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //            var connectionString = "server=(LocalDB)\\MSSQLLocalDB;Database=PeSportsTracker;Trusted_Connection=true;";
             services.AddTransient<Seeder>();
             services.AddScoped<ISecureTokenGenerator, SecureTokenGenerator>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
@@ -70,10 +69,9 @@ namespace WebApplication2
             services.AddTransient<IEmailSender, EmailSender>();
 
 
-            //core serviced peaks tõstma ümber
-            CoreCommandAndQueryServicesShouldBeMoved();
+            CoreCommandAndQueryServices();
 
-
+            //easier validation for testing
             services.AddIdentity<ApplicationUser, IdentityRole>(
                     options =>
                     {
@@ -98,7 +96,7 @@ namespace WebApplication2
             //        Configuration.GetConnectionString("SportTracerConnectionString")).UseLazyLoadingProxies()
             //);
 
-            void CoreCommandAndQueryServicesShouldBeMoved()
+            void CoreCommandAndQueryServices()
             {
                 services.AddScoped<Messages>();
                 services

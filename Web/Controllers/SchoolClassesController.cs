@@ -79,7 +79,7 @@ namespace WebApplication2.Controllers
             var names = cData.ChartData.Select(x => x.Name);
             var values = cData.ChartData.Select(x => x.Results);
             var dates = cData.Dates;
-            var jsonResult = new {dates = dates,exerciseName = exercise.Name, unit = exercise.Unit.Name, tulemused = new {names = names, values = values}};
+            var jsonResult = new {dates = dates,exerciseName = exercise.Name, unit = exercise.Unit.Name, dataResult = new {names = names, values = values}};
             return Json(jsonResult);
         }
         

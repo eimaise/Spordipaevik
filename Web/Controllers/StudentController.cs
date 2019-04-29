@@ -126,7 +126,7 @@ namespace WebApplication2.Controllers
             var jsonResult = new
             {
                 dates = data.Dates, exerciseName = exercise.Name, unit = exercise.Unit.Name,
-                tulemused = new
+                dataResult = new
                     {names = data.ChartData.Select(x => x.Name), values = data.ChartData.Select(x => x.Results)}
             };
             return Json(jsonResult);

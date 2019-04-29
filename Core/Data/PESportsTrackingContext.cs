@@ -7,9 +7,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Core.Data
 {
     public class PeSportsTrackingContext : IdentityDbContext<ApplicationUser>
-//        , ApplicationRole, string, IdentityUserClaim<string>,
-//        ApplicationUserRole, IdentityUserLogin<string>,
-//        IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public PeSportsTrackingContext(DbContextOptions<PeSportsTrackingContext> options) : base(options)
         {

@@ -64,10 +64,10 @@
                             }
                         }
                     });
-                for (var i = 0; i < data.tulemused.names.length; i++) {
+                for (var i = 0; i < data.dataResult.names.length; i++) {
                     chart.addSeries({                        
-                        name: data.tulemused.names[i],
-                        data: data.tulemused.values[i]
+                        name: data.dataResult.names[i],
+                        data: data.dataResult.values[i]
                     },false);
                 }
                 chart.redraw(); 

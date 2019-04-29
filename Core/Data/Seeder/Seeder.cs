@@ -182,7 +182,7 @@ namespace Core.Data.Seeder
         {
             _ctx.Add(Unit.CreateValueUnit("Meeter"));
             _ctx.Add(Unit.CreateValueUnit("Kilomeeter"));
-            _ctx.Add(Unit.CreateValueUnit("Cm"));
+            _ctx.Add(Unit.CreateValueUnit("Sentimeeter"));
             _ctx.Add(Unit.CreateValueUnit("Kordus"));
             _ctx.Add(Unit.CreateTimeUnit("Sekund"));
             _ctx.Add(Unit.CreateTimeUnit("Minut"));
