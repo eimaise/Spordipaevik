@@ -322,7 +322,7 @@ namespace Core.Data.Seeder
                 students.AddRange(CreateClassStudents(schoolClass.Name, schoolClass.Id));
             }
 
-            //applicationstudet test user
+            //application student test user
             students.Add(new Student
             {
                 Name = $"Testkasutaja student ",
