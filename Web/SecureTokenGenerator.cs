@@ -22,5 +22,5 @@ namespace WebApplication2
                 return token.Substring(0,length);
             }
         }
-    }g
+    }
 }

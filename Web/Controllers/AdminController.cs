@@ -35,7 +35,7 @@ namespace WebApplication2.Controllers
             _studentMapper = studentMapper;
             _urlHelper = urlHelperFactory.GetUrlHelper(actionContextAccessor.ActionContext);
         }
-s
+
         public IActionResult Index(AdminStudentsListVm model)
         {
             if (model == null)
